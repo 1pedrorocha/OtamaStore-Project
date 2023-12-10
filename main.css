@@ -23,4 +23,11 @@ body {
   font-family: var(--main-font);
   color: var(--main-dark);
   background-color: var(--white);
+  /* display: flex; */
+  /* justify-content: center; */
+}
+
+.test {
+  /* background-color: #111e2b; */
+  height: 200vh;
 }
