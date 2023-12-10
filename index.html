@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="./reset.css" />
     <link rel="stylesheet" href="./main.css" />
     <link rel="stylesheet" href="./css/header.css" />
-    <link rel="stylesheet" href="/hide.css" />
     <link rel="stylesheet" href="./css/product-category.css" />
+    <link rel="stylesheet" href="./css/cart.css" />
+
+    <link rel="stylesheet" href="/hide.css" />
+    <!-- Style-end -->
 
     <title>OtamaStore</title>
   </head>
@@ -23,10 +26,11 @@
       <!-- CENTER MENU -->
       <div class="header__center-menu">
         <h3>PRODUTOS</h3>
+        <!-- PRODUCT CATEGORIES -->
         <div class="product-category__container hidden">
           <div class="product-categories">
             <!-- LINHA PRO -->
-            <div class="product-category">
+            <div class="product-category" data-category="PRO">
               <img src="./img/Linha PRO.png" alt="Otamatones da linha PRO" />
               <div class="product-category__content">
                 <h3>Linha PRO</h3>
@@ -34,7 +38,7 @@
               </div>
             </div>
             <!-- LINHA FUN -->
-            <div class="product-category">
+            <div class="product-category" data-category="FUN">
               <img src="./img/Linha FUN.png" alt="Otamatones da linha FUN" />
               <div class="product-category__content">
                 <h3>Linha FUN</h3>
@@ -42,7 +46,7 @@
               </div>
             </div>
             <!-- LINHA MINI -->
-            <div class="product-category">
+            <div class="product-category" data-category="MINI">
               <img src="./img/Linha MINI.png" alt="Otamatones da linha MINI" />
               <div class="product-category__content">
                 <h3>Linha MINI</h3>
@@ -50,7 +54,7 @@
               </div>
             </div>
             <!-- ACESSÓRIOS -->
-            <div class="product-category">
+            <div class="product-category" data-category="Acessórios">
               <img src="./img/Acessórios.png" alt="Acessórios" />
               <div class="product-category__content">
                 <h3>Acessórios</h3>
@@ -64,21 +68,95 @@
       <!-- RIGHT NAVIGATION -->
       <div class="header__navigation">
         <div class="cart-amount__container">
-          <div class="header__navigation__button">
+          <div class="header__navigation__button" data-cartBtn>
             <img src="./img/cart-button.png" alt="shop icon" />
           </div>
-          <div class="cart-amount">9</div>
+          <div class="cart-amount">1</div>
         </div>
-        <div class="header__navigation__button">
+        <div class="header__navigation__button" data-chevronBtn>
           <img src="./img/chevron-button.png" alt="chevron icon" />
         </div>
       </div>
     </header>
 
-    <!-- PRODUCTS -->
+    <!-- CART -->
+    <div class="cart__container hidden">
+      <div class="background-dark"></div>
+      <div class="cart">
+        <!-- HEADER -->
+        <div class="cart__header">
+          <div class="cart__header__title">
+            <h3>Carrinho</h3>
+            <p>(1)</p>
+          </div>
+          <button class="cart__container__close">
+            <img src="./img/cart-close.png" alt="close icon" />
+          </button>
+        </div>
+
+        <!-- PRODUCT -->
+
+        <div class="cart__product__container">
+          <img
+            class="cart__product__container__img"
+            src="./img/cart-product.png"
+            alt="product in the cart"
+          />
+          <div class="cart__product__info">
+            <div class="cart__product__info__top">
+              <div class="cart__product__info__product-name">
+                <h4>Otamatone Pro</h4>
+                <p>Branco Perolado</p>
+              </div>
+              <button>
+                <img
+                  src="./img/cart-remove-product.png"
+                  alt="icon to remove product"
+                />
+              </button>
+            </div>
+            <div class="cart__product__info__bottom">
+              <div class="cart__product__info__bottom__quantity" data-minus>
+                <button class="cart__product__info__bottom__quantity__button">
+                  <img
+                    src="./img/cart-product-quantity-minus.png"
+                    alt="minus signal"
+                  />
+                </button>
+                <p>1</p>
+                <button
+                  class="cart__product__info__bottom__quantity__button"
+                  data-plus
+                >
+                  <img
+                    src="./img/cart-product-quantity-plus.png"
+                    alt="plus signal"
+                  />
+                </button>
+              </div>
+              <h5>R$ 499,90</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- TOTAL -->
+        <hr />
+        <div class="cart__total">
+          <p>Total</p>
+          <h4>R$ 499,90</h4>
+        </div>
+
+        <!-- CHECKOUT BUTTON -->
+        <button class="cart__checkout-button">Fechar Pedido</button>
+      </div>
+    </div>
+
+    <!-- ADMIN MENU -->
+    <div class="admin-menu__container"></div>
 
     <div class="test"></div>
   </body>
   <script src="./main.js"></script>
   <script src="./scripts/indexProductCategories.js"></script>
+  <script src="./scripts/indexCartButton.js"></script>
 </html>

@@ -11,6 +11,7 @@
   --main-dark: #111e2b;
   --black: #000;
   --secondary-purple: #3461e2;
+  --secondary-purple-hover: #2b53c0;
   --alert-red: #f04a4a;
   --background-red: #ffe4e4;
 
@@ -30,4 +31,5 @@ body {
 .test {
   /* background-color: #111e2b; */
   height: 200vh;
+  background-color: var(--light-gray);
 }
