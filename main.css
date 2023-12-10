@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  /* COLORS */
+
+  --white: #fff;
+  --off-white: #f7f9fc;
+  --light-gray: #e1ecf6;
+  --light-gray-hover: #c9d8e7;
+  --medium-gray: #738da5;
+  --main-dark: #111e2b;
+  --black: #000;
+  --secondary-purple: #3461e2;
+  --alert-red: #f04a4a;
+  --background-red: #ffe4e4;
+
+  /* FONTS */
+  --title-font: "Arvo", serif;
+  --main-font: "Inter", sans-serif;
+}
+
+body {
+  font-family: var(--main-font);
+  color: var(--main-dark);
+  background-color: var(--white);
+}
