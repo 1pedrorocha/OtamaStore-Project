@@ -1,0 +1,64 @@
+.admin-menu__container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  margin-left: -10px;
+  background-color: var(--light-gray-hover);
+  padding-top: 20px;
+  border-radius: 0 0 12px 12px;
+
+  /* margin-left: -10px; */
+}
+
+.admin-menu__box {
+  padding: 10px;
+  border-radius: 12px;
+  transition: background-color 0.2s;
+}
+
+.admin-menu__box:hover {
+  background-color: #b7c5d3;
+  border-radius: 12px;
+}
+
+.admin-menu__box:not(:hover) > .admin-menu__item__label {
+  display: none;
+}
+
+.admin-menu__item img {
+  width: 24px;
+}
+
+@keyframes itemLabelAnimation {
+  from {
+    opacity: 0;
+    margin-left: -105px;
+  }
+  to {
+    opacity: 0.7;
+    margin-left: -120px;
+  }
+}
+
+.admin-menu__item__label {
+  position: absolute;
+  margin-left: -120px;
+
+  width: 100px;
+  margin-top: -24px;
+  display: flex;
+  justify-content: end;
+  animation-name: itemLabelAnimation;
+  animation-duration: 0.2s;
+}
+
+.admin-menu__item__label p {
+  padding: 4px 8px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 4px;
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 300;
+}

@@ -31,5 +31,5 @@ body {
 .test {
   /* background-color: #111e2b; */
   height: 200vh;
-  background-color: var(--light-gray);
+  background-color: var(--white);
 }

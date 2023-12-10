@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/product-category.css" />
     <link rel="stylesheet" href="./css/cart.css" />
+    <link rel="stylesheet" href="./css/admin-menu.css" />
 
     <link rel="stylesheet" href="/hide.css" />
     <!-- Style-end -->
@@ -30,7 +31,7 @@
         <div class="product-category__container hidden">
           <div class="product-categories">
             <!-- LINHA PRO -->
-            <div class="product-category" data-category="PRO">
+            <div class="product-category" data-category="pro">
               <img src="./img/Linha PRO.png" alt="Otamatones da linha PRO" />
               <div class="product-category__content">
                 <h3>Linha PRO</h3>
@@ -68,16 +69,34 @@
       <!-- RIGHT NAVIGATION -->
       <div class="header__navigation">
         <div class="cart-amount__container">
-          <div class="header__navigation__button" data-cartBtn>
+          <div class="header__navigation__button" data-cartbtn>
             <img src="./img/cart-button.png" alt="shop icon" />
           </div>
           <div class="cart-amount">1</div>
+
+
         </div>
-        <div class="header__navigation__button" data-chevronBtn>
+        <div class="header__navigation__button" data-chevronbtn>
           <img src="./img/chevron-button.png" alt="chevron icon" />
+          <!-- ADMIN MENU -->
+            <div class="admin-menu__container hidden">
+            <div class="admin-menu__box" data-type="pedidos">
+              <div class="admin-menu__item" data-type="pedidos">
+                <img src="./img/admin-menu-item.png" alt="item icon" />
+              </div>
+              <div class="admin-menu__item__label"><p>Pedidos</p></div>
+            </div>
+            <div class="admin-menu__box" data-type="admin">
+              <div class="admin-menu__item" data-type="admin">
+                <img src="./img/admin-menu-access.png" alt="item icon" />
+              </div>
+              <div class="admin-menu__item__label"><p>Administrativo</p></div>
+            </div>
+          </div>
         </div>
-      </div>
     </header>
+        
+        
 
     <!-- CART -->
     <div class="cart__container hidden">
@@ -151,12 +170,10 @@
       </div>
     </div>
 
-    <!-- ADMIN MENU -->
-    <div class="admin-menu__container"></div>
-
     <div class="test"></div>
   </body>
   <script src="./main.js"></script>
   <script src="./scripts/indexProductCategories.js"></script>
   <script src="./scripts/indexCartButton.js"></script>
+  <script src="./scripts/indexAdminNavigation.js"></script>
 </html>

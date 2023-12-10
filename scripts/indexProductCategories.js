@@ -18,6 +18,7 @@ const productCategory = document.querySelectorAll(".product-category");
 
 productCategory.forEach((element) => {
   element.addEventListener("click", (event) => {
-    console.log(event.target.parentNode.dataset.category);
+    const destination = event.target.parentNode.dataset.category;
+    window.location.href = `./pages/otamatones-${destination}.html`;
   });
 });
