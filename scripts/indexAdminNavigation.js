@@ -19,10 +19,14 @@ console.log(adminCategoryButtons);
 
 adminCategoryButtons.forEach((element) => {
   element.addEventListener("click", (event) => {
+    let adminDestination;
+
     if (event.target.nodeName == "IMG") {
-      console.log(event.target.parentNode.dataset.type);
+      adminDestination = `./pages/${event.target.parentNode.dataset.type}`;
     } else {
-      console.log(event.target.dataset.type);
+      adminDestination = `./pages/${event.target.dataset.type}`;
     }
+
+    window.location.href = `./pages/otamatones-${adminDestination}.html`;
   });
 });
