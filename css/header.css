@@ -7,11 +7,18 @@ header {
 
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 
   position: fixed;
 
   user-select: none;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1200px;
 }
 
 /* LOGO */

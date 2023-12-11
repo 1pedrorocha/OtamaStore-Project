@@ -28,6 +28,7 @@ body {
   font-family: var(--main-font);
   color: var(--main-dark);
   background-color: var(--white);
+  line-height: 1.2;
   /* display: flex; */
   /* justify-content: center; */
 }

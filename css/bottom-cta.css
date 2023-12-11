@@ -1,0 +1,52 @@
+.bottom-cta {
+  background-color: var(--main-dark);
+  height: 100vh;
+  background-image: url("../img/bottom-cta-background-img.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--white);
+}
+
+.bottom-cta h1 {
+  font-family: var(--title-font);
+  font-size: 40px;
+  margin: 24px 0 16px 0;
+}
+
+.bottom-cta p {
+  width: 400px;
+  text-align: center;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.bottom-cta a {
+  text-decoration: none;
+  color: var(--white);
+
+  padding: 12px 24px;
+  border: 2px solid var(--white);
+
+  border-radius: 8px;
+
+  margin-top: 36px;
+  transition: 0.2s;
+}
+
+.bottom-cta a:hover {
+  color: var(--medium-gray);
+
+  border: 2px solid var(--medium-gray);
+
+  transition: 0.2s;
+}
+
+.bottom-cta img {
+  width: 150px;
+}
