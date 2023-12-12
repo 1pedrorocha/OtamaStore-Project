@@ -1,4 +1,5 @@
 .bottom-cta {
+  width: 100vw;
   background-color: var(--main-dark);
   height: 800px;
   background-image: url("../img/bottom-cta-background-img.png");

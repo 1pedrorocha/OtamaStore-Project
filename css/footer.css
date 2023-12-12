@@ -45,5 +45,5 @@ footer {
 
 .footer__content__text__division {
   height: auto;
-  border: 1px solid var(--light-gray);
+  border-right: 1px solid var(--light-gray);
 }

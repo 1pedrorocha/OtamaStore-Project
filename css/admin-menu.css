@@ -19,7 +19,7 @@
 }
 
 .admin-menu__box:hover {
-  background-color: #b7c5d3;
+  background-color: var(--medium-gray-hover);
   border-radius: 12px;
 }
 

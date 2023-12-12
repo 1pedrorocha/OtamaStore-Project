@@ -1,0 +1,141 @@
+.store {
+  width: 100vw;
+  background-color: var(--off-white);
+
+  padding-top: 120px;
+
+  padding-bottom: 80px;
+
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+
+  box-shadow: inset 0px 0px 12px 0px rgba(87, 81, 134, 0.2);
+}
+
+.store__container {
+  width: 1200px;
+}
+
+.store__header {
+  margin-bottom: 32px;
+}
+
+/* BREADCRUMBS */
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.breadcrumbs img {
+  width: 6px;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.breadcrumb__not-selected {
+  color: var(--medium-gray);
+}
+
+.breadcrumb__selected {
+  color: var(--secondary-purple);
+}
+
+/* TITLE */
+
+.store__header__title {
+  width: 100%;
+
+  padding-top: 8px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.store__header__title h2 {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+/* STORE NAVIGATION */
+
+.store__header__store-navigation {
+  display: flex;
+  gap: 16px;
+  align-items: end;
+}
+
+.store__header__store-navigation a {
+  text-decoration: none;
+}
+
+.store__header__store-navigation__divider {
+  height: 16px;
+  border-right: 1px solid var(--medium-gray);
+}
+
+.store__header__store-navigation__not-selected {
+  color: var(--medium-gray);
+}
+
+.store__header__store-navigation__not-selected:hover {
+  color: var(--medium-gray-hover);
+}
+
+.store__header__store-navigation__selected {
+  color: var(--secondary-purple);
+  font-weight: 600;
+}
+
+/* STORE ITEMS */
+
+.store-products {
+  width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* PRODUCT */
+.store-products__product {
+  background-color: var(--white);
+  padding: 36px 36px 32px 36px;
+
+  border-radius: 16px;
+  box-shadow: 0px 0px 12px 0px rgba(87, 81, 134, 0.2);
+
+  max-width: 220px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+  gap: 32px;
+  transition: 0.3s;
+}
+
+.store-products__product:hover {
+  box-shadow: 0px 4px 12px 0px rgba(87, 81, 134, 0.2);
+  transition: 0.3s;
+  transform: scale(1.01);
+  transform: translate(0, -4px);
+}
+
+.store-products__product img {
+  width: 150px;
+}
+
+.store-products__product__info h5 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.store-products__product__out-of-stock {
+  opacity: 0.5;
+}

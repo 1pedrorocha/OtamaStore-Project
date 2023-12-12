@@ -18,7 +18,20 @@ const productCategory = document.querySelectorAll(".product-category");
 
 productCategory.forEach((element) => {
   element.addEventListener("click", (event) => {
-    const destination = event.target.parentNode.dataset.category;
+    let destination;
+
+    if (event.target.nodeName == "IMG") {
+      destination = event.target.parentNode.dataset.category;
+    } else if (event.target.nodeName == "H3" || "P") {
+      destination = event.target.parentNode.parentNode.dataset.category;
+    } else {
+      destination = event.target.dataset.category;
+    }
+
+    if (destination == undefined) {
+      destination = event.target.dataset.category;
+    }
+
     window.location.href = `./pages/otamatones-${destination}.html`;
   });
 });
