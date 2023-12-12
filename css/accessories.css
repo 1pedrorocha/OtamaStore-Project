@@ -57,6 +57,17 @@
   align-items: center;
 
   padding: 12px;
+  transition: 0.3s;
+}
+
+.accessories__accessory:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+.accessories__accessory__container:hover > .accessories__accessory:not(:hover) {
+  opacity: 0.8;
+  transition: 0.3s;
 }
 
 .accessories__accessory img {

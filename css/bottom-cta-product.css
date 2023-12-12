@@ -1,5 +1,6 @@
-.bottom-cta {
+.bottom-cta-products {
   width: 100vw;
+
   background-color: var(--main-dark);
   height: 800px;
   background-image: url("../img/bottom-cta-products-background-img.png");
@@ -14,25 +15,25 @@
   color: var(--white);
 }
 
-.bottom-cta h1 {
+.bottom-cta-products h1 {
   font-family: var(--title-font);
   font-size: 40px;
   margin: 24px 0 16px 0;
 }
 
-.bottom-cta p {
+.bottom-cta-products p {
   width: 400px;
   text-align: center;
   font-weight: 300;
   line-height: 1.5;
 }
 
-.bottom-cta a {
+.bottom-cta-products a {
   text-decoration: none;
-  color: var(--medium-gray);
+  color: var(--white);
 
   padding: 12px 24px;
-  border: 2px solid var(--medium-gray);
+  border: 2px solid var(--white);
 
   border-radius: 8px;
 
@@ -40,6 +41,11 @@
   transition: 0.2s;
 }
 
-.bottom-cta img {
-  width: 150px;
+.bottom-cta-products a:hover {
+  color: var(--light-gray-hover);
+  border: 2px solid var(--light-gray-hover);
+}
+
+.bottom-cta-products img {
+  width: 80px;
 }
