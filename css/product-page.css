@@ -1,0 +1,118 @@
+.product__section {
+  width: 100vw;
+  /* height: 100vh; */
+  background-color: var(--white);
+
+  padding-top: 120px;
+
+  padding-bottom: 140px;
+
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+
+  /* box-shadow: inset 0px 0px 12px 0px rgba(87, 81, 134, 0.2); */
+}
+
+.product__container {
+  width: 1200px;
+}
+
+.product__content {
+  display: flex;
+}
+
+.product__content__product-images {
+  display: flex;
+}
+
+/* IMAGES */
+
+/* thumbnails */
+.product__content__product-images__thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product__content__product-images__thumbnails__thumbnail {
+  padding: 4px;
+  width: 65px;
+  height: 65px;
+  border: 1px solid var(--medium-gray);
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.product__content__product-images__thumbnails__thumbnail:hover {
+  box-shadow: 0px 2px 8px 0px rgba(87, 81, 134, 0.2);
+  transform: translateY(-1px);
+  transition: 0.2s;
+}
+
+.product__content__product-images__thumbnails__thumbnail img {
+  width: 100%;
+}
+
+.selected-thumbnail {
+  border: 2px solid var(--medium-gray);
+}
+
+/* main image */
+.product__content__product-images__main {
+  width: 470px;
+  height: 470px;
+  padding: 0 156px;
+}
+
+/* PRODUCT INFORMATION */
+
+.product__content__information {
+  width: 100%;
+}
+
+.product__content__information h4 {
+  font-weight: 600;
+  color: var(--secondary-purple);
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.product__content__information h1 {
+  font-weight: 700;
+  color: var(--main-dark);
+  font-size: 32px;
+}
+
+.product__content__information p {
+  margin: 22px 0 44px 0;
+}
+
+.product__content__information__price {
+  margin-bottom: 16px;
+}
+
+.product__content__information__price h6 {
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--medium-gray);
+  text-decoration: line-through;
+}
+
+.product__content__information__price h2 {
+  font-size: 40px;
+}
+
+.products__content__information__free-delivery {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--secondary-purple);
+  margin: 36px 0 24px 0;
+}
+
+.products__content__information__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

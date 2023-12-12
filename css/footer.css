@@ -1,5 +1,7 @@
 footer {
   background-color: var(--black);
+  font-weight: 300;
+  font-size: 14px;
   width: 100vw;
   box-sizing: border-box;
   box-shadow: 0px 0px 16px 0px rgba(87, 81, 134, 0.2);
