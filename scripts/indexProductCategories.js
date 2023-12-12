@@ -32,6 +32,6 @@ productCategory.forEach((element) => {
       destination = event.target.dataset.category;
     }
 
-    window.location.href = `./pages/otamatones-${destination}.html`;
+    window.location.href = `/pages/otamatones-${destination}.html`;
   });
 });

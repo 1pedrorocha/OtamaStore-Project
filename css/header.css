@@ -12,6 +12,8 @@ header {
   position: fixed;
 
   user-select: none;
+
+  z-index: 5;
 }
 
 .header__container {
