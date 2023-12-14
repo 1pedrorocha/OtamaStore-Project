@@ -75,7 +75,9 @@ const galleryImages = JSON.parse(activeProductGallery);
 function createGalleryImages() {
   galleryImages.forEach((image) => {
     galleryThumbnails.innerHTML += `
-          <div class="product__content__product-images__thumbnails__thumbnail">
+          <div class="product__content__product-images__thumbnails__thumbnail" data-${galleryImages.indexOf(
+            image
+          )}>
                       <img src="..${image} " alt="imagem do Otamatone">
                     </div>
           
@@ -84,3 +86,40 @@ function createGalleryImages() {
 }
 
 createGalleryImages();
+
+const thumbnail0 = document.querySelector("[data-0]");
+const thumbnail1 = document.querySelector("[data-1]");
+const thumbnail2 = document.querySelector("[data-2]");
+const thumbnail3 = document.querySelector("[data-3]");
+const thumbnail4 = document.querySelector("[data-4]");
+const thumbnail5 = document.querySelector("[data-5]");
+
+thumbnail0.addEventListener("click", () => {
+  productMainImage.innerHTML = `
+    <img class="product__content__product-images__main" src="${galleryImages[0]}" alt="imagem do Otamatone">`;
+});
+
+thumbnail1.addEventListener("click", () => {
+  productMainImage.innerHTML = `
+      <img class="product__content__product-images__main" src="${galleryImages[1]}" alt="imagem do Otamatone">`;
+});
+
+thumbnail2.addEventListener("click", () => {
+  productMainImage.innerHTML = `
+      <img class="product__content__product-images__main" src="${galleryImages[2]}" alt="imagem do Otamatone">`;
+});
+
+thumbnail3.addEventListener("click", () => {
+  productMainImage.innerHTML = `
+        <img class="product__content__product-images__main" src="${galleryImages[3]}" alt="imagem do Otamatone">`;
+});
+
+thumbnail4.addEventListener("click", () => {
+  productMainImage.innerHTML = `
+          <img class="product__content__product-images__main" src="${galleryImages[4]}" alt="imagem do Otamatone">`;
+});
+
+thumbnail5.addEventListener("click", () => {
+  productMainImage.innerHTML = `
+            <img class="product__content__product-images__main" src="${galleryImages[5]}" alt="imagem do Otamatone">`;
+});
