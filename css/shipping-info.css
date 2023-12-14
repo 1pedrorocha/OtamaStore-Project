@@ -1,0 +1,140 @@
+.shipping-info__container {
+  width: 100vw;
+  background-color: var(--off-white);
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+
+  box-shadow: inset 0px 0px 12px 0px rgba(87, 81, 134, 0.2);
+}
+
+.shipping-info__customer-info {
+  width: 100%;
+  background-color: var(--white);
+  height: auto;
+
+  padding-top: 120px;
+
+  display: flex;
+  justify-content: end;
+  padding-right: 100px;
+}
+
+/* CUSTOMER INFO */
+
+.shipping-info__customer-info__wrapper {
+  width: 70%;
+  box-sizing: border-box;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.form__buttons {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submit-button {
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  color: var(--white);
+  width: 300px;
+  padding: 16px 0;
+  background-color: var(--secondary-purple);
+  border-radius: 12px;
+  transition: 0.3s;
+  border: none;
+  font-family: var(--main-font);
+  font-size: 14px;
+}
+
+.submit-button:hover {
+  background-color: var(--secondary-purple-hover);
+}
+
+.form__buttons a {
+  text-decoration: none;
+  color: var(--secondary-purple);
+}
+
+.form__buttons a:hover {
+  color: var(--secondary-purple-hover);
+}
+
+/* CART */
+
+.shipping-info__cart {
+  width: 100%;
+  height: auto;
+
+  padding-top: 120px;
+  box-shadow: inset 0px 0px 12px 0px rgba(87, 81, 134, 0.2);
+  padding-left: 60px;
+}
+
+.shipping-info__cart__wrapper {
+  width: 70%;
+}
+
+.shipping-info__cart h3 {
+  margin-top: 50px;
+}
+
+.shipping-info__cart__product__container {
+  width: 100%;
+  margin-bottom: 32px;
+  display: flex;
+}
+
+.shipping-info__cart__product__container__img {
+  margin-right: 16px;
+  width: 70px;
+}
+
+.shipping-info__cart__product__info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+
+  justify-content: space-between;
+}
+
+.shipping-info__cart__product__info__product-name h4 {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+h5 {
+  font-weight: 600;
+}
+
+hr {
+  border: 1px solid var(--light-gray);
+}
+
+.shipping-info__cart__total {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+}
+
+.shipping-info__cart__total h5 {
+  color: var(--medium-gray);
+}
+
+.shipping-info__cart__total h2 {
+  color: var(--medium-gray);
+  font-size: 24px;
+  font-weight: 600;
+}
