@@ -87,39 +87,52 @@ function createGalleryImages() {
 
 createGalleryImages();
 
-const thumbnail0 = document.querySelector("[data-0]");
-const thumbnail1 = document.querySelector("[data-1]");
-const thumbnail2 = document.querySelector("[data-2]");
-const thumbnail3 = document.querySelector("[data-3]");
-const thumbnail4 = document.querySelector("[data-4]");
-const thumbnail5 = document.querySelector("[data-5]");
+function changeThumbnail() {
+  const thumbnail0 = document.querySelector("[data-0]");
+  thumbnail0.addEventListener("click", () => {
+    productMainImage.innerHTML = `
+          <img class="product__content__product-images__main" src="${galleryImages[0]}" alt="imagem do Otamatone">`;
+  });
 
-thumbnail0.addEventListener("click", () => {
-  productMainImage.innerHTML = `
-    <img class="product__content__product-images__main" src="${galleryImages[0]}" alt="imagem do Otamatone">`;
-});
+  if (galleryImages.length > 1) {
+    const thumbnail1 = document.querySelector("[data-1]");
+    thumbnail1.addEventListener("click", () => {
+      productMainImage.innerHTML = `
+            <img class="product__content__product-images__main" src="${galleryImages[1]}" alt="imagem do Otamatone">`;
+    });
+  }
 
-thumbnail1.addEventListener("click", () => {
-  productMainImage.innerHTML = `
-      <img class="product__content__product-images__main" src="${galleryImages[1]}" alt="imagem do Otamatone">`;
-});
+  if (galleryImages.length > 2) {
+    const thumbnail2 = document.querySelector("[data-2]");
+    thumbnail2.addEventListener("click", () => {
+      productMainImage.innerHTML = `
+            <img class="product__content__product-images__main" src="${galleryImages[2]}" alt="imagem do Otamatone">`;
+    });
+  }
 
-thumbnail2.addEventListener("click", () => {
-  productMainImage.innerHTML = `
-      <img class="product__content__product-images__main" src="${galleryImages[2]}" alt="imagem do Otamatone">`;
-});
+  if (galleryImages.length > 3) {
+    const thumbnail3 = document.querySelector("[data-3]");
+    thumbnail3.addEventListener("click", () => {
+      productMainImage.innerHTML = `
+              <img class="product__content__product-images__main" src="${galleryImages[3]}" alt="imagem do Otamatone">`;
+    });
+  }
 
-thumbnail3.addEventListener("click", () => {
-  productMainImage.innerHTML = `
-        <img class="product__content__product-images__main" src="${galleryImages[3]}" alt="imagem do Otamatone">`;
-});
+  if (galleryImages.length > 4) {
+    const thumbnail4 = document.querySelector("[data-4]");
+    thumbnail4.addEventListener("click", () => {
+      productMainImage.innerHTML = `
+                <img class="product__content__product-images__main" src="${galleryImages[4]}" alt="imagem do Otamatone">`;
+    });
+  }
 
-thumbnail4.addEventListener("click", () => {
-  productMainImage.innerHTML = `
-          <img class="product__content__product-images__main" src="${galleryImages[4]}" alt="imagem do Otamatone">`;
-});
+  if (galleryImages.length > 5) {
+    const thumbnail5 = document.querySelector("[data-5]");
+    thumbnail5.addEventListener("click", () => {
+      productMainImage.innerHTML = `
+                  <img class="product__content__product-images__main" src="${galleryImages[5]}" alt="imagem do Otamatone">`;
+    });
+  }
+}
 
-thumbnail5.addEventListener("click", () => {
-  productMainImage.innerHTML = `
-            <img class="product__content__product-images__main" src="${galleryImages[5]}" alt="imagem do Otamatone">`;
-});
+changeThumbnail();
