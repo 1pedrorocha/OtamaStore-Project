@@ -1,11 +1,13 @@
 // ALERTA DE ITENS NO CARRINHO NO MENU
 
-const cartItems = [1, 2];
+const cartItems = [];
 
 const cartAmountAlert = document.querySelector(".cart-amount");
 
-cartAmountAlert.addEventListener("click", () => {
-  console.log("test");
-});
+if (cartItems.length < 1) {
+  cartAmountAlert.classList.add("hidden");
+} else {
+  cartAmountAlert.classList.remove("hidden");
+}
 
 cartAmountAlert.textContent = cartItems.length;

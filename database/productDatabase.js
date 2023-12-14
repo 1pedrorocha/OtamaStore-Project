@@ -1,5 +1,3 @@
-//products
-
 const StockPro = [
   {
     _id: "657a116dd1624743e79441e6",
@@ -9,8 +7,7 @@ const StockPro = [
     Price: 499.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/pro/branco-perolado-1.png",
+    "Aditional-images": [
       "/img/products/pro/branco-perolado-2.png",
       "/img/products/pro/branco-perolado-3.png",
       "/img/products/pro/branco-perolado-4.png",
@@ -25,8 +22,7 @@ const StockPro = [
     Price: 499.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/pro/black-piano-1.png",
+    "Aditional-images": [
       "/img/products/pro/black-piano-2.png",
       "/img/products/pro/black-piano-3.png",
       "/img/products/pro/black-piano-4.png",
@@ -41,8 +37,7 @@ const StockPro = [
     Price: 549.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/pro/authentic-kirby-1.png",
+    "Aditional-images": [
       "/img/products/pro/authentic-kirby-2.png",
       "/img/products/pro/authentic-kirby-3.png",
       "/img/products/pro/authentic-kirby-4.png",
@@ -58,8 +53,7 @@ const StockPro = [
     Price: 549.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/pro/gudetama-1.png",
+    "Aditional-images": [
       "/img/products/pro/gudetama-2.png",
       "/img/products/pro/gudetama-3.png",
     ],
@@ -73,8 +67,7 @@ const StockPro = [
     Price: 599.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/pro/hatsune-miku-1.png",
+    "Aditional-images": [
       "/img/products/pro/hatsune-miku-2.png",
       "/img/products/pro/hatsune-miku-3.png",
       "/img/products/pro/hatsune-miku-4.png",
@@ -90,8 +83,7 @@ const StockPro = [
     Price: 499.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/pro/aggretsuko-1.png",
+    "Aditional-images": [
       "/img/products/pro/aggretsuko-2.png",
       "/img/products/pro/aggretsuko-3.png",
       "/img/products/pro/aggretsuko-4.png",
@@ -106,8 +98,7 @@ const StockPro = [
     Price: 599.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/pro/kabuki-1.png",
+    "Aditional-images": [
       "/img/products/pro/kabuki-2.png",
       "/img/products/pro/kabuki-3.png",
       "/img/products/pro/kabuki-4.png",
@@ -122,8 +113,7 @@ const StockPro = [
     Price: 599.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/pro/lucky-cat-1.png",
+    "Aditional-images": [
       "/img/products/pro/lucky-cat-2.png",
       "/img/products/pro/lucky-cat-3.png",
       "/img/products/pro/lucky-cat-4.png",
@@ -138,8 +128,7 @@ const StockPro = [
     Price: 599.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/pro/bear-mascot-1.png",
+    "Aditional-images": [
       "/img/products/pro/bear-mascot-2.png",
       "/img/products/pro/bear-mascot-3.png",
       "/img/products/pro/bear-mascot-4.png",
@@ -157,8 +146,7 @@ const StockFun = [
     Price: 99.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/fun/branco-1.png",
+    "Aditional-images": [
       "/img/products/pro/branco-2.png",
       "/img/products/pro/branco-3.png",
       "/img/products/pro/branco-4.png",
@@ -173,8 +161,7 @@ const StockFun = [
     Price: 99.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/fun/preto-1.png",
+    "Aditional-images": [
       "/img/products/pro/preto-2.png",
       "/img/products/pro/preto-3.png",
       "/img/products/pro/preto-4.png",
@@ -190,8 +177,7 @@ const StockFun = [
     Price: 99.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/fun/amarelo-1.png",
+    "Aditional-images": [
       "/img/products/pro/amarelo-2.png",
       "/img/products/pro/amarelo-3.png",
       "/img/products/pro/amarelo-4.png",
@@ -206,8 +192,7 @@ const StockFun = [
     Price: 99.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/fun/aquamarine-1.png",
+    "Aditional-images": [
       "/img/products/pro/aquamarine-2.png",
       "/img/products/pro/aquamarine-3.png",
       "/img/products/pro/aquamarine-4.png",
@@ -222,8 +207,7 @@ const StockFun = [
     Price: 99.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/fun/azul-1.png",
+    "Aditional-images": [
       "/img/products/pro/azul-2.png",
       "/img/products/pro/azul-3.png",
       "/img/products/pro/azul-4.png",
@@ -238,8 +222,7 @@ const StockFun = [
     Price: 99.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/fun/rosa-1.png",
+    "Aditional-images": [
       "/img/products/pro/rosa-2.png",
       "/img/products/pro/rosa-3.png",
       "/img/products/pro/rosa-4.png",
@@ -254,8 +237,7 @@ const StockFun = [
     Price: 129.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/fun/duotone-1.png",
+    "Aditional-images": [
       "/img/products/pro/duotone-2.png",
       "/img/products/pro/duotone-3.png",
       "/img/products/pro/duotone-4.png",
@@ -270,8 +252,7 @@ const StockFun = [
     Price: 149.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/fun/hello-kitty-1.png",
+    "Aditional-images": [
       "/img/products/pro/hello-kitty-2.png",
       "/img/products/pro/hello-kitty-3.png",
       "/img/products/pro/hello-kitty-4.png",
@@ -289,12 +270,11 @@ const StockMini = [
     Price: 39.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/mini/preto-1.png",
-      "/img/products/mini/preto-2.png",
-      "/img/products/mini/preto-3.png",
-      "/img/products/mini/preto-4.png",
-      "/img/products/mini/preto-5.png",
+    "Aditional-images": [
+      "/img/products/pro/preto-2.png",
+      "/img/products/pro/preto-3.png",
+      "/img/products/pro/preto-4.png",
+      "/img/products/pro/preto-5.png",
     ],
     Stock: 10,
   },
@@ -306,11 +286,10 @@ const StockMini = [
     Price: 39.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/mini/vermelho-1.png",
-      "/img/products/mini/vermelho-2.png",
-      "/img/products/mini/vermelho-3.png",
-      "/img/products/mini/vermelho-4.png",
+    "Aditional-images": [
+      "/img/products/pro/vermelho-2.png",
+      "/img/products/pro/vermelho-3.png",
+      "/img/products/pro/vermelho-4.png",
     ],
     Stock: 13,
   },
@@ -322,12 +301,11 @@ const StockMini = [
     Price: 39.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/mini/branco-1.png",
-      "/img/products/mini/branco-2.png",
-      "/img/products/mini/branco-3.png",
-      "/img/products/mini/branco-4.png",
-      "/img/products/mini/branco-5.png",
+    "Aditional-images": [
+      "/img/products/pro/branco-2.png",
+      "/img/products/pro/branco-3.png",
+      "/img/products/pro/branco-4.png",
+      "/img/products/pro/branco-5.png",
     ],
     Stock: 22,
   },
@@ -339,10 +317,9 @@ const StockMini = [
     Price: 39.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/mini/amarelo-1.png",
-      "/img/products/mini/amarelo-2.png",
-      "/img/products/mini/amarelo-3.png",
+    "Aditional-images": [
+      "/img/products/pro/amarelo-2.png",
+      "/img/products/pro/amarelo-3.png",
     ],
     Stock: 13,
   },
@@ -354,7 +331,7 @@ const StockMini = [
     Price: 39.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: ["/img/products/mini/azul-1.png", "/img/products/mini/azul-2.png"],
+    "Aditional-images": ["/img/products/pro/azul-2.png"],
     Stock: 13,
   },
   {
@@ -365,12 +342,11 @@ const StockMini = [
     Price: 49.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/mini/duotone-1.png",
-      "/img/products/mini/duotone-2.png",
-      "/img/products/mini/duotone-3.png",
-      "/img/products/mini/duotone-4.png",
-      "/img/products/mini/duotone-5.png",
+    "Aditional-images": [
+      "/img/products/pro/duotone-2.png",
+      "/img/products/pro/duotone-3.png",
+      "/img/products/pro/duotone-4.png",
+      "/img/products/pro/duotone-5.png",
     ],
     Stock: 3,
   },
@@ -382,12 +358,11 @@ const StockMini = [
     Price: 49.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/mini/melody-z-1.png",
-      "/img/products/mini/melody-z-2.png",
-      "/img/products/mini/melody-z-3.png",
-      "/img/products/mini/melody-z-4.png",
-      "/img/products/mini/melody-z-5.png",
+    "Aditional-images": [
+      "/img/products/pro/melody-z-2.png",
+      "/img/products/pro/melody-z-3.png",
+      "/img/products/pro/melody-z-4.png",
+      "/img/products/pro/melody-z-5.png",
     ],
     Stock: 0,
   },
@@ -399,12 +374,11 @@ const StockMini = [
     Price: 49.9,
     Description:
       "O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.",
-    Gallery: [
-      "/img/products/mini/kirby-1.png",
-      "/img/products/mini/kirby-2.png",
-      "/img/products/mini/kirby-3.png",
-      "/img/products/mini/kirby-4.png",
-      "/img/products/mini/kirby-5.png",
+    "Aditional-images": [
+      "/img/products/pro/kirby-2.png",
+      "/img/products/pro/kirby-3.png",
+      "/img/products/pro/kirby-4.png",
+      "/img/products/pro/kirby-5.png",
     ],
     Stock: 0,
   },
@@ -419,12 +393,11 @@ const accessories = [
     Price: 69.9,
     Description:
       "A melhor forma de proteger seu Otamatone. Um case para você guardar e transportar seu insturmento com segurança e praticidade.",
-    Gallery: [
-      "/img/products/accessories/case-paiyule-1.png",
-      "/img/products/accessories/case-paiyule-2.png",
-      "/img/products/accessories/case-paiyule-3.png",
-      "/img/products/accessories/case-paiyule-4.png",
-      "/img/products/accessories/case-paiyule-5.png",
+    "Aditional-images": [
+      "/img/products/pro/case-paiyule-2.png",
+      "/img/products/pro/case-paiyule-3.png",
+      "/img/products/pro/case-paiyule-4.png",
+      "/img/products/pro/case-paiyule-5.png",
     ],
     Stock: 14,
   },
@@ -436,11 +409,10 @@ const accessories = [
     Price: 49.9,
     Description:
       "A melhor forma de proteger seu Otamatone. Um case para você guardar e transportar seu insturmento com segurança e praticidade.",
-    Gallery: [
-      "/img/products/accessories/mchoi-black-1.png",
-      "/img/products/accessories/mchoi-black-2.png",
-      "/img/products/accessories/mchoi-black-3.png",
-      "/img/products/accessories/mchoi-black-4.png",
+    "Aditional-images": [
+      "/img/products/pro/mchoi-black-2.png",
+      "/img/products/pro/mchoi-black-3.png",
+      "/img/products/pro/mchoi-black-4.png",
     ],
     Stock: 14,
   },
@@ -452,11 +424,10 @@ const accessories = [
     Price: 39.9,
     Description:
       "A melhor forma de proteger seu Otamatone. Um case para você guardar e transportar seu insturmento com segurança e praticidade.",
-    Gallery: [
-      "/img/products/accessories/portable-case-1.png",
-      "/img/products/accessories/portable-case-2.png",
-      "/img/products/accessories/portable-case-3.png",
-      "/img/products/accessories/portable-case-4.png",
+    "Aditional-images": [
+      "/img/products/pro/portable-case-2.png",
+      "/img/products/pro/portable-case-3.png",
+      "/img/products/pro/portable-case-4.png",
     ],
     Stock: 38,
   },
@@ -468,10 +439,9 @@ const accessories = [
     Price: 59.9,
     Description:
       "A melhor forma de proteger seu Otamatone. Um case para você guardar e transportar seu insturmento com segurança e praticidade.",
-    Gallery: [
-      "/img/products/accessories/paiyule-black-1.png",
-      "/img/products/accessories/paiyule-black-2.png",
-      "/img/products/accessories/paiyule-black-3.png",
+    "Aditional-images": [
+      "/img/products/pro/paiyule-black-2.png",
+      "/img/products/pro/paiyule-black-3.png",
     ],
     Stock: 38,
   },
@@ -483,10 +453,9 @@ const accessories = [
     Price: 59.9,
     Description:
       "A melhor forma de proteger seu Otamatone. Um case para você guardar e transportar seu insturmento com segurança e praticidade.",
-    Gallery: [
-      "/img/products/accessories/hardcase-pink-1.png",
-      "/img/products/accessories/hardcase-pink-2.png",
-      "/img/products/accessories/hardcase-pink-3.png",
+    "Aditional-images": [
+      "/img/products/pro/hardcase-pink-2.png",
+      "/img/products/pro/hardcase-pink-3.png",
     ],
     Stock: 38,
   },
@@ -498,11 +467,10 @@ const accessories = [
     Price: 49.9,
     Description:
       "A melhor forma de proteger seu Otamatone. Um case para você guardar e transportar seu insturmento com segurança e praticidade.",
-    Gallery: [
-      "/img/products/accessories/mchoi-pink-1.png",
-      "/img/products/accessories/mchoi-pink-2.png",
-      "/img/products/accessories/mchoi-pink-3.png",
-      "/img/products/accessories/mchoi-pink-4.png",
+    "Aditional-images": [
+      "/img/products/pro/mchoi-pink-2.png",
+      "/img/products/pro/mchoi-pink-3.png",
+      "/img/products/pro/mchoi-pink-4.png",
     ],
     Stock: 38,
   },
@@ -514,11 +482,10 @@ const accessories = [
     Price: 69.9,
     Description:
       "A melhor forma de proteger seu Otamatone. Um case para você guardar e transportar seu insturmento com segurança e praticidade.",
-    Gallery: [
-      "/img/products/accessories/rummyluck-1.png",
-      "/img/products/accessories/rummyluck-2.png",
-      "/img/products/accessories/rummyluck-3.png",
-      "/img/products/accessories/rummyluck-4.png",
+    "Aditional-images": [
+      "/img/products/pro/rummyluck-2.png",
+      "/img/products/pro/rummyluck-3.png",
+      "/img/products/pro/rummyluck-4.png",
     ],
     Stock: 38,
   },
@@ -530,94 +497,11 @@ const accessories = [
     Price: 39.9,
     Description:
       "A melhor forma de proteger seu Otamatone. Um case para você guardar e transportar seu insturmento com segurança e praticidade.",
-    Gallery: [
-      "/img/products/accessories/soft-case-1.png",
-      "/img/products/accessories/soft-case-2.png",
-      "/img/products/accessories/soft-case-3.png",
-      "/img/products/accessories/soft-case-4.png",
+    "Aditional-images": [
+      "/img/products/pro/soft-case-2.png",
+      "/img/products/pro/soft-case-3.png",
+      "/img/products/pro/soft-case-4.png",
     ],
     Stock: 38,
   },
 ];
-
-// page
-const storeShown = document.querySelector("[data-filter]");
-
-let stockFilter;
-
-if (storeShown.dataset.filter == "pro") {
-  stockFilter = StockPro;
-} else if (storeShown.dataset.filter == "fun") {
-  stockFilter = StockFun;
-} else if (storeShown.dataset.filter == "mini") {
-  stockFilter = StockMini;
-} else if (storeShown.dataset.filter == "accessories") {
-  stockFilter = accessories;
-} else if (storeShown.dataset.filter == "all") {
-  let stockAll;
-  stockFilter = [...StockPro, ...StockFun, ...StockMini, ...accessories];
-}
-
-storeShown.innerHTML = "";
-stockFilter.forEach((item) => {
-  const itemId = item._id;
-  const itemName = item.Name;
-  const itemPrice = item.Price;
-  const itemStock = item.Stock;
-  const itemImage = item.Image;
-  const itemCategory = item.Category;
-  const itemGallery = item.Gallery;
-
-  if (itemStock > 0) {
-    storeShown.innerHTML += `
-     <div class="store-products__product store-products__product__stock" >
-            <img src="${itemImage}" alt="Otamatone ${itemName} ">
-            <div class="store-products__product__info"
-                   data-id = "${itemId}"
-                   data-category = "${itemCategory}"
-                   data-name = "${itemName}"
-                   data-price = "${itemPrice}"
-                   data-image = ${itemImage}"
-                   data-gallery = ${JSON.stringify(itemGallery)}
-
-                   >
-              <h5>${itemName}</h5>
-              <p>R$ ${parseFloat(itemPrice).toFixed(2).replace(".", ",")}</p>
-            </div>
-          </div>`;
-  } else {
-    storeShown.innerHTML += `
-     <div class="store-products__product store-products__product__out-of-stock">
-            <img src="${itemImage}" alt="Otamatone ${itemName} ">
-            <div class="store-products__product__info">
-              <h5>${itemName}</h5>
-              <p>Esgotado</p>
-            </div>
-          </div>`;
-  }
-});
-
-const storeProducts = document.querySelectorAll(
-  ".store-products__product__stock"
-);
-
-storeProducts.forEach((element) => {
-  element.addEventListener("click", () => {
-    //
-    const selectedProductId = element.childNodes[3].dataset.id;
-    const selectedProductCategory = element.childNodes[3].dataset.category;
-    const selectedProductName = element.childNodes[3].dataset.name;
-    const selectedProductPrice = element.childNodes[3].dataset.price;
-    const selectedProductImage = element.childNodes[3].dataset.image;
-    const selectedProductGallery = element.childNodes[3].dataset.gallery;
-
-    localStorage.setItem("selected-category", selectedProductCategory);
-    localStorage.setItem("selected-product-id", selectedProductId);
-    localStorage.setItem("selected-product-name", selectedProductName);
-    localStorage.setItem("selected-product-price", selectedProductPrice);
-    localStorage.setItem("selected-product-image", selectedProductImage);
-    localStorage.setItem("selected-product-gallery", selectedProductGallery);
-
-    window.location.href = `/pages/product-page.html`;
-  });
-});

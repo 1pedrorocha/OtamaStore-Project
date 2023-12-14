@@ -200,9 +200,11 @@
             <img src="../img/breadcrumb.png" alt="breadcrumb">
             <a class="breadcrumb__not-selected"href="./loja.html">Loja</a>
             <img src="../img/breadcrumb.png" alt="breadcrumb">
-            <a class="breadcrumb__not-selected"href="./otamatones-pro.html">Linha PRO</a>
-            <img src="../img/breadcrumb.png" alt="breadcrumb">
-            <a class="breadcrumb__selected" href="#">Branco Perolado</a>
+            <div class="breadcrumb_store_link">
+              <a class="breadcrumb__not-selected" id="breadcrumb_category" href="./otamatones-pro.html">Linha PRO</a>
+            </div>
+            <img src="../img/breadcrumb.png"  alt="breadcrumb">
+            <a class="breadcrumb__selected" id="breadcrumb_product" href="#">Branco Perolado</a>
           </div>        
         </div>
 
@@ -210,32 +212,23 @@
         <div class="product__content">
           <div class="product__content__product-images">
             <div class="product__content__product-images__thumbnails">
-              <div class="product__content__product-images__thumbnails__thumbnail selected-thumbnail">
-                <img src="../img/products-pro/branco-perolado-1.png" alt="imagem do Otamatone">
-              </div>
-              <div class="product__content__product-images__thumbnails__thumbnail">
-                <img src="../img/products-pro/branco-perolado-2.png" alt="imagem do Otamatone">
-              </div>
-              <div class="product__content__product-images__thumbnails__thumbnail">
-                <img src="../img/products-pro/branco-perolado-3.png" alt="imagem do Otamatone">
-              </div>
-              <div class="product__content__product-images__thumbnails__thumbnail">
-                <img src="../img/products-pro/branco-perolado-4.png" alt="imagem do Otamatone">
-              </div>
+              
 
             </div>
+            <div class="product__content__image-container">
             <img class="product__content__product-images__main" src="../img/products-pro/branco-perolado-1.png" alt="imagem do Otamatone">
+            </div>
 
 
           </div>
           <div class="product__content__information">
-            <h4>Otamatone Pro</h4>
-            <h1>Branco Perolado</h1>
+            <h4 id="product_category_on_page">Otamatone Pro</h4>
+            <h1 id="product_name_on_page">Branco Perolado</h1>
             <p>O instrumento perfeito para os apaixonados por música e inovação. Destaque-se com um dos instrumentos musicais mais invoadores do Japão.</p>
 
             <div class="product__content__information__price">
-              <h6>R$ 549&nbsp</h6>
-              <h2>R$ 499</h2>
+              <h6 id="product_old-price_on_page">R$ 549&nbsp</h6>
+              <h2 id="product_price_on_page">R$ 499</h2>
             </div>
 
             <div class="products__content__information__free-delivery">
@@ -417,6 +410,7 @@
 
     </footer>
   </body>
+
   <script src="../scripts/productPage.js"></script>
   <script src="../main.js"></script>
   <script src="../scripts/indexProductCategories.js"></script>

@@ -15,8 +15,6 @@ adminMenuButton.addEventListener("mouseout", () => {
 
 const adminCategoryButtons = document.querySelectorAll(".admin-menu__box");
 
-console.log(adminCategoryButtons);
-
 adminCategoryButtons.forEach((element) => {
   element.addEventListener("click", (event) => {
     let adminDestination;
