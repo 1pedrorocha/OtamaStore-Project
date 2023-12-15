@@ -193,7 +193,7 @@ function createItemOnCart(item) {
               </div>
               <div class="cart__product__info__bottom">
                 <div class="cart__product__info__bottom__quantity" data-minus>
-                  <button class="cart__product__info__bottom__quantity__button">
+                  <button class="cart__product__info__bottom__quantity__button" id="cart_minus-button">
                     <img
                       src="../img/cart-product-quantity-minus.png"
                       alt="minus signal"
@@ -202,7 +202,7 @@ function createItemOnCart(item) {
                   <p>${item.amount}</p>
                   <button
                     class="cart__product__info__bottom__quantity__button"
-                    data-plus
+                    id="cart_plus-button"
                   >
                     <img
                       src="../img/cart-product-quantity-plus.png"

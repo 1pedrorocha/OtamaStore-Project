@@ -138,6 +138,10 @@
   justify-content: center;
 }
 
+.cart__product__info__bottom__quantity__button:hover {
+  background-color: var(--light-gray-hover);
+}
+
 .cart__product__info__bottom__quantity p {
   width: 40px;
   text-align: center;
