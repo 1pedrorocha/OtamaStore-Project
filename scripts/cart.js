@@ -1,3 +1,22 @@
+// OPEN AND CLOSE CART TAB
+
+const cartBtn = document.querySelector("[data-cartBtn]");
+const cartContainer = document.querySelector(".cart__container");
+const cartCloseButton = document.querySelector(".cart__container__close");
+const darkBackground = document.querySelector(".background-dark");
+
+cartBtn.addEventListener("click", () => {
+  cartContainer.classList.remove("hidden");
+});
+
+cartCloseButton.addEventListener("click", () => {
+  cartContainer.classList.add("hidden");
+});
+
+darkBackground.addEventListener("click", () => {
+  cartContainer.classList.add("hidden");
+});
+
 // TAKING CART ITEMS FROM LOCAL STORE
 
 const cartListOnStorage = localStorage.getItem("cart");
