@@ -79,15 +79,15 @@
   border-right: 1px solid var(--medium-gray);
 }
 
-.store__header__store-navigation__not-selected {
+.store__header__store-navigation {
   color: var(--medium-gray);
 }
 
-.store__header__store-navigation__not-selected:hover {
+.store__header__store-navigation:hover {
   color: var(--medium-gray-hover);
 }
 
-.store__header__store-navigation__selected {
+._selected {
   color: var(--secondary-purple);
   font-weight: 600;
 }

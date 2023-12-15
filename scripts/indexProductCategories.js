@@ -27,11 +27,16 @@ productCategory.forEach((element) => {
     } else {
       destination = event.target.dataset.category;
     }
-
     if (destination == undefined) {
       destination = event.target.dataset.category;
     }
 
-    window.location.href = `/pages/otamatones-${destination}.html`;
+    defineChoosenCategory(destination);
+
+    window.location.href = `/pages/loja.html`;
   });
 });
+
+function defineChoosenCategory(category) {
+  localStorage.setItem("choosen-category", category);
+}

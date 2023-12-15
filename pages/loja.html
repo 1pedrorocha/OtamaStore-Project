@@ -116,7 +116,7 @@
     </header>
 
     <!-- CART -->
-    <div class="cart__container">
+    <div class="cart__container hidden">
       <div class="background-dark"></div>
       <div class="cart">
         <!-- HEADER -->
@@ -148,39 +148,38 @@
         <button class="secondary-button cart-secondary-button">Limpar Carrinho</button>
       </div>
     </div>
-
     <!-- CART END -->
 
     <!-- STORE -->
     <section class="store">
-
       <div class="store__container">
 
         <!-- STORE HEADER -->
         <div class="store__header">
           <div class="breadcrumbs">
-          <a class="breadcrumb__not-selected" href="../index.html">Home</a>
+            <a class="breadcrumb__not-selected" href="../index.html">Home</a>
             <img src="../img/breadcrumb.png" alt="breadcrumb">
-            <a class="breadcrumb__selected" href="./loja.html">Loja</a>
+            <a class="breadcrumb__not-selected" id="breadcrumb-loja" href="#">Loja</a>
+            
           </div> 
           
           <!-- STORE TITLE -->
           <div class="store__header__title">
-            <h2>Todos os produtos</h2>
+            <h2 id="store-title">Catálogo de Produtos</h2>
             <div class="store__header__store-navigation">
-              <a href="./otamatones-pro.html" class="store__header__store-navigation__not-selected">
+              <a href="#" class="store__header__store-navigation" id="header-linha-pro">
                 Linha PRO
               </a>
               <div class="store__header__store-navigation__divider"></div>
-              <a href="./otamatones-fun.html" class="store__header__store-navigation__not-selected">
+              <a href="#" class="store__header__store-navigation" id="header-linha-fun">
                 Linha FUN
               </a>
               <div class="store__header__store-navigation__divider"></div>
-              <a href="./otamatones-mini.html" class="store__header__store-navigation__not-selected">
+              <a href="#" class="store__header__store-navigation" id="header-linha-mini">
                 Linha MINI
               </a>
               <div class="store__header__store-navigation__divider"></div>
-              <a href="./otamatones-acessorios.html" class="store__header__store-navigation__not-selected">
+              <a href="#" class="store__header__store-navigation" id="header-acessorios">
                 Acessórios
               </a>
             </div>

@@ -29,6 +29,29 @@ if (cartListOnStorage == null) {
   cartItems = JSON.parse(localStorage.getItem("cart"));
 }
 
+// CART COUNTER ON HEADER
+const cartAmountAlert = document.querySelector(".cart-amount");
+
+function addCartAmountToHeader() {
+  // Update the total number of items
+  let cartTotalItems = 0;
+  if (cartItems) {
+    for (var i = 0; i < cartItems.length; i++) {
+      cartTotalItems += parseFloat(cartItems[i].amount);
+    }
+  }
+
+  if (cartItems.length < 1) {
+    cartAmountAlert.classList.add("hidden");
+  } else {
+    cartAmountAlert.classList.remove("hidden");
+  }
+
+  cartAmountAlert.innerHTML = cartTotalItems;
+}
+
+addCartAmountToHeader();
+
 // ADD TO CART BUTTON
 
 const addToCartButton = document.getElementById(
@@ -41,21 +64,39 @@ if (addToCartButton) {
 
     addToList();
     addListToStorage();
+    showProductsOnCart();
+    addCartAmountToHeader();
     cartContainer.classList.remove("hidden");
   });
 }
 
 function addToList() {
-  const newCartItem = {
-    id: `${activeProductId}`,
-    name: `${activeProductName}`,
-    price: `${activeProductPrice}`,
-    category: `${activeProductCategory}`,
-    image: `${activeProductImage}`,
-    amount: 1,
-  };
+  if (cartItems.find((element) => element.id == activeProductId)) {
+    const editedCartItems = cartItems.map((item) => {
+      if (item.id == activeProductId) {
+        let currentAmount = item.amount;
+        let updatedAmount = currentAmount + 1;
 
-  cartItems.push(newCartItem);
+        return { ...item, amount: updatedAmount };
+      }
+      return item;
+    });
+
+    cartItems = editedCartItems;
+
+    console.log(cartItems);
+  } else {
+    const newCartItem = {
+      id: `${activeProductId}`,
+      name: `${activeProductName}`,
+      price: `${activeProductPrice}`,
+      category: `${activeProductCategory}`,
+      image: `${activeProductImage}`,
+      amount: 1,
+    };
+
+    cartItems.push(newCartItem);
+  }
 }
 
 function addListToStorage() {
@@ -78,17 +119,7 @@ function clearCart() {
   adAmountToCartHeader();
 }
 
-// ALERTA DE ITENS NO CARRINHO NO MENU
-
-const cartAmountAlert = document.querySelector(".cart-amount");
-
-if (cartItems.length < 1) {
-  cartAmountAlert.classList.add("hidden");
-} else {
-  cartAmountAlert.classList.remove("hidden");
-}
-
-cartAmountAlert.textContent = cartItems.length;
+// cartAmountAlert.textContent = cartItems.length;
 
 // // INSERIR VISUALMENTE NO CARRINHO
 
@@ -116,30 +147,31 @@ const productsListedOnCart = document.querySelector(
 function showProductsOnCart() {
   if (productsListedOnCart) {
     productsListedOnCart.innerHTML = "";
-  }
 
-  if (productsListedOnCart) {
     cartItems.forEach((element) => {
       createItemOnCart(element);
     });
   }
+}
 
-  function createItemOnCart(item) {
-    let categoryOnCart = "Otamatone Fun";
+function createItemOnCart(item) {
+  let categoryOnCart = "Otamatone Fun";
 
-    if (item.category == "PRO") {
-      categoryOnCart = "Otamatone Pro";
-    } else if (item.category === "FUN") {
-      categoryOnCart == "Otamatone Fun";
-    } else if (item.category == "Mini") {
-      categoryOnCart = "Otamatone Mini";
-    } else if (item.category == "Acessórios") {
-      categoryOnCart = "Acessórios";
-    } else {
-      categoryOnCart = "Otamatone";
-    }
+  if (item.category == "PRO") {
+    categoryOnCart = "Otamatone Pro";
+  } else if (item.category === "FUN") {
+    categoryOnCart == "Otamatone Fun";
+  } else if (item.category == "Mini") {
+    categoryOnCart = "Otamatone Mini";
+  } else if (item.category == "Acessórios") {
+    categoryOnCart = "Acessórios";
+  } else {
+    categoryOnCart = "Otamatone";
+  }
 
-    productsListedOnCart.innerHTML += `
+  let finalPrice = parseFloat(item.price * item.amount).toFixed(2);
+
+  productsListedOnCart.innerHTML += `
     <div class="cart__product__container">
             <img
               class="cart__product__container__img"
@@ -167,7 +199,7 @@ function showProductsOnCart() {
                       alt="minus signal"
                     />
                   </button>
-                  <p>1</p>
+                  <p>${item.amount}</p>
                   <button
                     class="cart__product__info__bottom__quantity__button"
                     data-plus
@@ -178,13 +210,12 @@ function showProductsOnCart() {
                     />
                   </button>
                 </div>
-                <h5>R$ ${item.price.replace(".", ",")}</h5>
+                <h5>R$ ${finalPrice.replace(".", ",")}</h5>
               </div>
             </div>
           </div>
 
     `;
-  }
 }
 
 showProductsOnCart();
@@ -197,9 +228,10 @@ function updateTotalOnCart() {
 
   if (cartItems) {
     for (var i = 0; i < cartItems.length; i++) {
-      cartTotalAmountValue += parseFloat(cartItems[i].price);
+      let productPrice = cartItems[i].price;
+      let productAmount = cartItems[i].amount;
 
-      console.log(cartTotalAmountValue);
+      cartTotalAmountValue += parseFloat(productPrice * productAmount);
     }
   }
 

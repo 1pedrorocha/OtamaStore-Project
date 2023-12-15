@@ -527,35 +527,143 @@ const accessories = [
 // page
 const storeShown = document.querySelector("[data-filter]");
 
+const choosenCategory = localStorage.getItem("choosen-category");
+
+//breadcrumbs
+const breadcrumbsStore = document.querySelector(".breadcrumbs");
+
+// breadcrumbsStore.addEventListener("click", restoreItems);
+
+// function restoreItems() {
+//   localStorage.setItem("choosen-category", "");
+//   window.location.href = "";
+// }
+
+// stock
 let stockFilter;
 
-if (storeShown.dataset.filter == "pro") {
-  stockFilter = StockPro;
-} else if (storeShown.dataset.filter == "fun") {
-  stockFilter = StockFun;
-} else if (storeShown.dataset.filter == "mini") {
-  stockFilter = StockMini;
-} else if (storeShown.dataset.filter == "accessories") {
-  stockFilter = accessories;
-} else if (storeShown.dataset.filter == "all") {
-  let stockAll = [...StockPro, ...StockFun, ...StockMini, ...accessories];
-  stockAllPositive = stockAll.filter((item) => item.Stock > 0);
+// right navigation
 
-  stockFilter = stockAllPositive;
+const navigationPro = document.getElementById("header-linha-pro");
+
+const navigationFun = document.getElementById("header-linha-fun");
+
+const navigationMini = document.getElementById("header-linha-mini");
+
+const navigationAccessories = document.getElementById("header-acessorios");
+
+navigationPro.addEventListener("click", () => {
+  if (choosenCategory != "pro") {
+    localStorage.setItem("choosen-category", "pro");
+    window.location.href = "";
+  } else {
+    localStorage.setItem("choosen-category", "");
+    window.location.href = "";
+  }
+});
+
+navigationFun.addEventListener("click", () => {
+  if (choosenCategory != "fun") {
+    localStorage.setItem("choosen-category", "fun");
+    window.location.href = "";
+  } else {
+    localStorage.setItem("choosen-category", "");
+    window.location.href = "";
+  }
+});
+
+navigationMini.addEventListener("click", () => {
+  if (choosenCategory != "mini") {
+    localStorage.setItem("choosen-category", "mini");
+    window.location.href = "";
+  } else {
+    localStorage.setItem("choosen-category", "");
+    window.location.href = "";
+  }
+});
+
+navigationAccessories.addEventListener("click", () => {
+  if (choosenCategory != "acessorios") {
+    localStorage.setItem("choosen-category", "acessorios");
+    window.location.href = "";
+  } else {
+    localStorage.setItem("choosen-category", "");
+    window.location.href = "";
+  }
+});
+
+// store interface
+function setStoreInterface() {
+  if (choosenCategory == "pro") {
+    //selects products
+    stockFilter = StockPro;
+
+    // //adds breadcrumbs
+    // breadcrumbsStore.innerHTML += `<img src="../img/breadcrumb.png" alt="breadcrumb">
+    // <a class="breadcrumb__selected" href="#">Linha PRO</a>`;
+
+    //highlights navigation link
+    navigationPro.classList.add("_selected");
+  } else if (choosenCategory == "fun") {
+    //selects products
+    stockFilter = StockFun;
+
+    // //adds breadcrumbs
+    // breadcrumbsStore.innerHTML += `<img src="../img/breadcrumb.png" alt="breadcrumb">
+    // <a class="breadcrumb__selected" href="#">Linha FUN</a>`;
+
+    //highlights navigation link
+    navigationFun.classList.add("_selected");
+  } else if (choosenCategory == "mini") {
+    //selects products
+    stockFilter = StockMini;
+
+    // //adds breadcrumbs
+    // breadcrumbsStore.innerHTML += `<img src="../img/breadcrumb.png" alt="breadcrumb">
+    // <a class="breadcrumb__selected" href="#">Linha MINI</a>`;
+
+    //highlights navigation link
+    navigationMini.classList.add("_selected");
+  } else if (choosenCategory == "acessorios") {
+    //selects products
+    stockFilter = accessories;
+
+    // //adds breadcrumbs
+    // breadcrumbsStore.innerHTML += `<img src="../img/breadcrumb.png" alt="breadcrumb">
+    // <a class="breadcrumb__selected" href="#">Acessórios</a>`;
+
+    //highlights navigation link
+    navigationAccessories.classList.add("_selected");
+  } else {
+    //selects ALL products
+    let stockAll = [...StockPro, ...StockFun, ...StockMini, ...accessories];
+    stockAllPositive = stockAll.filter((item) => item.Stock > 0);
+
+    stockFilter = stockAllPositive;
+
+    // //removes breadcrumbs
+    // breadcrumbsStore.innerHTML = `<a class="breadcrumb__not-selected" href="../index.html">Home</a>
+    // <img src="../img/breadcrumb.png" alt="breadcrumb">
+    //  <a class="breadcrumb__selected" href="#" id="breadcrumb-loja">Loja</a>`;
+  }
 }
 
-storeShown.innerHTML = "";
-stockFilter.forEach((item) => {
-  const itemId = item._id;
-  const itemName = item.Name;
-  const itemPrice = item.Price;
-  const itemStock = item.Stock;
-  const itemImage = item.Image;
-  const itemCategory = item.Category;
-  const itemGallery = item.Gallery;
+setStoreInterface();
 
-  if (itemStock > 0) {
-    storeShown.innerHTML += `
+function generateCards() {
+  storeShown.innerHTML = "";
+
+  stockFilter.forEach((item) => {
+    const itemId = item._id;
+    const itemName = item.Name;
+    const itemPrice = item.Price;
+    const itemStock = item.Stock;
+    const itemImage = item.Image;
+    const itemCategory = item.Category;
+    const itemGallery = item.Gallery;
+
+    if (itemStock > 0) {
+      storeShown.innerHTML += `
      <div class="store-products__product store-products__product__stock" >
             <img src="${itemImage}" alt="Otamatone ${itemName} ">
             <div class="store-products__product__info"
@@ -572,8 +680,8 @@ stockFilter.forEach((item) => {
               <p>R$ ${parseFloat(itemPrice).toFixed(2).replace(".", ",")}</p>
             </div>
           </div>`;
-  } else {
-    storeShown.innerHTML += `
+    } else {
+      storeShown.innerHTML += `
      <div class="store-products__product store-products__product__out-of-stock">
             <img src="${itemImage}" alt="Otamatone ${itemName} ">
             <div class="store-products__product__info">
@@ -582,8 +690,11 @@ stockFilter.forEach((item) => {
               <p>Esgotado</p>
             </div>
           </div>`;
-  }
-});
+    }
+  });
+}
+
+generateCards();
 
 const storeProducts = document.querySelectorAll(
   ".store-products__product__stock"
