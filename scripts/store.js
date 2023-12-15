@@ -538,8 +538,10 @@ if (storeShown.dataset.filter == "pro") {
 } else if (storeShown.dataset.filter == "accessories") {
   stockFilter = accessories;
 } else if (storeShown.dataset.filter == "all") {
-  let stockAll;
-  stockFilter = [...StockPro, ...StockFun, ...StockMini, ...accessories];
+  let stockAll = [...StockPro, ...StockFun, ...StockMini, ...accessories];
+  stockAllPositive = stockAll.filter((item) => item.Stock > 0);
+
+  stockFilter = stockAllPositive;
 }
 
 storeShown.innerHTML = "";
@@ -565,6 +567,7 @@ stockFilter.forEach((item) => {
                    data-gallery = ${JSON.stringify(itemGallery)}
 
                    >
+               <h6>${itemCategory}</h6>    
               <h5>${itemName}</h5>
               <p>R$ ${parseFloat(itemPrice).toFixed(2).replace(".", ",")}</p>
             </div>
@@ -574,6 +577,7 @@ stockFilter.forEach((item) => {
      <div class="store-products__product store-products__product__out-of-stock">
             <img src="${itemImage}" alt="Otamatone ${itemName} ">
             <div class="store-products__product__info">
+            <h6>${itemCategory}</h6>  
               <h5>${itemName}</h5>
               <p>Esgotado</p>
             </div>

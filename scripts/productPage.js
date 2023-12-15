@@ -136,3 +136,11 @@ function changeThumbnail() {
 }
 
 changeThumbnail();
+
+// PURCHASE BUTTON
+
+const purchaseButton = document.getElementById("product_page_purchase_button");
+
+purchaseButton.addEventListener("click", (e) => {
+  e.preventDefault();
+});

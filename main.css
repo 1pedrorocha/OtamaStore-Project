@@ -63,6 +63,8 @@ body {
   background-color: var(--light-gray);
   border-radius: 12px;
   transition: 0.3s;
+  border: none;
+  font-family: var(--main-font);
 }
 
 .secondary-button:hover {

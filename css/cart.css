@@ -180,3 +180,7 @@
   background-color: var(--secondary-purple-hover);
   transition: 0.5s;
 }
+
+.cart-secondary-button {
+  margin-top: 16px;
+}
