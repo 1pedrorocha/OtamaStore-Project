@@ -66,8 +66,6 @@ const accessoriesToBePlacedOnMainPage = JSON.parse(
   localStorage.getItem("accessories-main-page")
 );
 
-console.log(accessoriesToBePlacedOnMainPage);
-
 function createAccessoriesOnMainPage() {
   if (accessoriesOnMainPageContainer) {
     accessoriesOnMainPageContainer.innerHTML = "";

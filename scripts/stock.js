@@ -531,7 +531,7 @@ const accessories = [
 // sending accessories to main
 
 let sortedNumbers = [];
-function sortNumbers() {
+function sortAccessoriesAndPush() {
   let sortedNumbers = [];
   let multiple = accessories.length;
 
@@ -566,8 +566,6 @@ function sortNumbers() {
   }
   sortedNumbers.push(fourthNumber);
 
-  console.log(sortedNumbers);
-
   // adding to local store
 
   let accessoriesToMainPage = [];
@@ -581,7 +579,7 @@ function sortNumbers() {
     JSON.stringify(accessoriesToMainPage)
   );
 }
-sortNumbers();
+sortAccessoriesAndPush();
 
 // store interface
 function setStoreInterface() {
@@ -611,19 +609,20 @@ setStoreInterface();
 // generate cards
 
 function generateCards() {
-  storeShown.innerHTML = "";
+  if (storeShown) {
+    storeShown.innerHTML = "";
 
-  stockFilter.forEach((item) => {
-    const itemId = item._id;
-    const itemName = item.Name;
-    const itemPrice = item.Price;
-    const itemStock = item.Stock;
-    const itemImage = item.Image;
-    const itemCategory = item.Category;
-    const itemGallery = item.Gallery;
+    stockFilter.forEach((item) => {
+      const itemId = item._id;
+      const itemName = item.Name;
+      const itemPrice = item.Price;
+      const itemStock = item.Stock;
+      const itemImage = item.Image;
+      const itemCategory = item.Category;
+      const itemGallery = item.Gallery;
 
-    if (itemStock > 0) {
-      storeShown.innerHTML += `
+      if (itemStock > 0) {
+        storeShown.innerHTML += `
        <div class="store-products__product store-products__product__stock" >
               <img src="${itemImage}" alt="Otamatone ${itemName} ">
               <div class="store-products__product__info"
@@ -640,8 +639,8 @@ function generateCards() {
                 <p>R$ ${parseFloat(itemPrice).toFixed(2).replace(".", ",")}</p>
               </div>
             </div>`;
-    } else {
-      storeShown.innerHTML += `
+      } else {
+        storeShown.innerHTML += `
        <div class="store-products__product store-products__product__out-of-stock">
               <img src="${itemImage}" alt="Otamatone ${itemName} ">
               <div class="store-products__product__info">
@@ -650,8 +649,9 @@ function generateCards() {
                 <p>Esgotado</p>
               </div>
             </div>`;
-    }
-  });
+      }
+    });
+  }
 }
 
 generateCards();
