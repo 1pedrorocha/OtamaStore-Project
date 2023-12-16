@@ -41,12 +41,60 @@ function defineChoosenCategory(category) {
   localStorage.setItem("choosen-category", category);
 }
 
+// BUY NOW BUTTON
+
+const callToActionButtons = document.querySelectorAll(
+  "#main_page_call-to-action"
+);
+
+if (callToActionButtons) {
+  callToActionButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      defineChoosenCategory("");
+      window.location.href = `/pages/loja.html`;
+    });
+  });
+}
+
+// ACCESSORIES
+
+const accessoriesOnMainPageContainer = document.querySelector(
+  ".accessories__accessory__container"
+);
+
+const accessoriesToBePlacedOnMainPage = JSON.parse(
+  localStorage.getItem("accessories-main-page")
+);
+
+console.log(accessoriesToBePlacedOnMainPage);
+
+function createAccessoriesOnMainPage() {
+  if (accessoriesOnMainPageContainer) {
+    accessoriesOnMainPageContainer.innerHTML = "";
+
+    accessoriesToBePlacedOnMainPage.forEach((item) => {
+      accessoriesOnMainPageContainer.innerHTML += `
+      <div class="accessories__accessory">
+        <img src="${item.Image}" alt="Acessorio para Otamatone">
+        <h5>${item.Name}</h5>
+        <p>${item.Price}</p>
+      </div>
+    `;
+    });
+  }
+}
+
+createAccessoriesOnMainPage();
+
+// SEE MORE ACCESSORIES
 const seeMoreAccessories = document.getElementById(
   "main_page_link-to_accessories"
 );
 
-seeMoreAccessories.addEventListener("click", (e) => {
-  e.preventDefault();
-  defineChoosenCategory("acessorios");
-  window.location.href = `/pages/loja.html`;
-});
+if (seeMoreAccessories) {
+  seeMoreAccessories.addEventListener("click", (e) => {
+    e.preventDefault();
+    defineChoosenCategory("acessorios");
+    window.location.href = `/pages/loja.html`;
+  });
+}
