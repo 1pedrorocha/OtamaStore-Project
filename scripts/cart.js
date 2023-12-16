@@ -31,9 +31,10 @@ if (cartListOnStorage == null) {
 
 // CART COUNTER ON HEADER
 const cartAmountAlert = document.querySelector(".cart-amount");
+const amountItemsOnCart = document.getElementById("amount-items-in-cart");
 
 function addCartAmountToHeader() {
-  // Update the total number of items
+  // Update the total number of items on the header
   let cartTotalItems = 0;
   if (cartItems) {
     for (var i = 0; i < cartItems.length; i++) {
@@ -46,8 +47,16 @@ function addCartAmountToHeader() {
   } else {
     cartAmountAlert.classList.remove("hidden");
   }
-
   cartAmountAlert.innerHTML = cartTotalItems;
+
+  // Update the total number of items on the cart header
+  if (amountItemsOnCart) {
+    if (cartItems && cartItems.length > 0) {
+      amountItemsOnCart.innerHTML = `(${cartTotalItems})`;
+    } else {
+      amountItemsOnCart.innerHTML = ``;
+    }
+  }
 }
 
 addCartAmountToHeader();
@@ -119,24 +128,7 @@ function clearCart() {
   adAmountToCartHeader();
 }
 
-// cartAmountAlert.textContent = cartItems.length;
-
 // // INSERIR VISUALMENTE NO CARRINHO
-
-// //numero de itens no carrinho
-const amountItemsOnCart = document.getElementById("amount-items-in-cart");
-
-function adAmountToCartHeader() {
-  if (amountItemsOnCart) {
-    if (cartItems && cartItems.length > 0) {
-      amountItemsOnCart.innerHTML = `(${cartItems.length})`;
-    } else {
-      amountItemsOnCart.innerHTML = ``;
-    }
-  }
-}
-
-adAmountToCartHeader();
 
 // //lista de produtos no carrinho
 
@@ -192,7 +184,9 @@ function createItemOnCart(item) {
                 </button>
               </div>
               <div class="cart__product__info__bottom">
-                <div class="cart__product__info__bottom__quantity" data-minus>
+                <div class="cart__product__info__bottom__quantity" data-id = "${
+                  item.id
+                }">
                   <button class="cart__product__info__bottom__quantity__button" id="cart_minus-button">
                     <img
                       src="../img/cart-product-quantity-minus.png"
@@ -219,6 +213,7 @@ function createItemOnCart(item) {
 }
 
 showProductsOnCart();
+
 // atualizar total
 
 const cartTotalAmountOnScreen = document.getElementById("cart_total_amount");
@@ -243,3 +238,16 @@ function updateTotalOnCart() {
 }
 
 updateTotalOnCart();
+
+// Add to the amount of items in the cart
+
+const minusButtons = document.querySelectorAll("#cart_minus-button");
+
+const plusButtons = document.querySelectorAll("#cart_plus-button");
+
+minusButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    console.log("minus");
+    console.log(button.parentNode.dataset.id);
+  });
+});

@@ -117,15 +117,15 @@
       </section>
     </header>
 
-    <!-- CART -->
-    <div class="cart__container hidden">
+     <!-- CART -->
+     <div class="cart__container hidden">
       <div class="background-dark"></div>
       <div class="cart">
         <!-- HEADER -->
         <div class="cart__header">
           <div class="cart__header__title">
             <h3>Carrinho</h3>
-            <p>(1)</p>
+            <p id="amount-items-in-cart"></p>
           </div>
           <button class="cart__container__close">
             <img src="../img/cart-close.png" alt="close icon" />
@@ -137,16 +137,16 @@
         <div class="cart__product-list__container">
         </div>
 
-
         <!-- TOTAL -->
         <hr />
         <div class="cart__total">
           <p>Total</p>
-          <h4>R$ 499,90</h4>
+          <h4 id="cart_total_amount">R$ 0,00</h4>
         </div>
 
         <!-- CHECKOUT BUTTON -->
         <button class="cart__checkout-button">Fechar Pedido</button>
+
         <button class="secondary-button cart-secondary-button">Limpar Carrinho</button>
       </div>
     </div>

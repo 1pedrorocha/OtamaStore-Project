@@ -15,18 +15,6 @@ productMainImage.innerHTML = `
 
 `;
 
-// BREADCRUMB
-// const breadcrumbCategory = document.querySelector(".breadcrumb_store_link");
-// if (activeProductCategory == "PRO") {
-//   breadcrumbCategory.innerHTML = `<a class="breadcrumb__not-selected" id="breadcrumb_category" href="./loja.html">Linha PRO</a>`;
-// } else if (activeProductCategory == "FUN") {
-//   breadcrumbCategory.innerHTML = `<a class="breadcrumb__not-selected" id="breadcrumb_category" href="./loja.html">Linha FUN</a>`;
-// } else if (activeProductCategory == "Mini") {
-//   breadcrumbCategory.innerHTML = `<a class="breadcrumb__not-selected" id="breadcrumb_category" href="./loja.html">Linha MINI</a>`;
-// } else if (activeProductCategory == "Acessórios") {
-//   breadcrumbCategory.innerHTML = `<a class="breadcrumb__not-selected" id="breadcrumb_category" href="./loja.html">Acessórios</a>`;
-// }
-
 const breadcrumbProduct = document.getElementById("breadcrumb_product");
 breadcrumbProduct.innerHTML = `${activeProductName}`;
 
