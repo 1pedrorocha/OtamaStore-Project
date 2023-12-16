@@ -218,7 +218,7 @@
 
 .cart__product-list__container::-webkit-scrollbar {
   width: 8px;
-  background: #f4f4f4;
+  /* background: #f4f4f4; */
 }
 
 .cart__product-list__container::-webkit-scrollbar-thumb {
