@@ -251,3 +251,10 @@ minusButtons.forEach((button) => {
     console.log(button.parentNode.dataset.id);
   });
 });
+
+plusButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    console.log("plus");
+    console.log(button.parentNode.dataset.id);
+  });
+});

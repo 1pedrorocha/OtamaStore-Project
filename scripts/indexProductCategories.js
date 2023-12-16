@@ -71,11 +71,20 @@ function createAccessoriesOnMainPage() {
     accessoriesOnMainPageContainer.innerHTML = "";
 
     accessoriesToBePlacedOnMainPage.forEach((item) => {
+      let finalPrice = item.Price.toFixed(2).replace(".", ",");
+
       accessoriesOnMainPageContainer.innerHTML += `
-      <div class="accessories__accessory">
+      <div class="accessories__accessory"
+                    data-id = "${item._id}"
+                     data-category = "${item.Category}"
+                     data-name = "${item.Name}"
+                     data-price = "${item.Price}"
+                     data-image = ${item.Image}"
+                     data-gallery = ${JSON.stringify(item.Gallery)}
+      >
         <img src="${item.Image}" alt="Acessorio para Otamatone">
         <h5>${item.Name}</h5>
-        <p>${item.Price}</p>
+        <p>R$ ${finalPrice}</p>
       </div>
     `;
     });
@@ -83,6 +92,23 @@ function createAccessoriesOnMainPage() {
 }
 
 createAccessoriesOnMainPage();
+
+const accessoryCardOnMainPage = document.querySelectorAll(
+  ".accessories__accessory"
+);
+
+accessoryCardOnMainPage.forEach((item) => {
+  item.addEventListener("click", () => {
+    localStorage.setItem("selected-category", item.dataset.category);
+    localStorage.setItem("selected-product-id", item.dataset.id);
+    localStorage.setItem("selected-product-name", item.dataset.name);
+    localStorage.setItem("selected-product-price", item.dataset.price);
+    localStorage.setItem("selected-product-image", item.dataset.image);
+    localStorage.setItem("selected-product-gallery", item.dataset.gallery);
+
+    window.location.href = `/pages/product-page.html`;
+  });
+});
 
 // SEE MORE ACCESSORIES
 const seeMoreAccessories = document.getElementById(
