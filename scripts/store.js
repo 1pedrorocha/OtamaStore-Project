@@ -532,13 +532,6 @@ const choosenCategory = localStorage.getItem("choosen-category");
 //breadcrumbs
 const breadcrumbsStore = document.querySelector(".breadcrumbs");
 
-// breadcrumbsStore.addEventListener("click", restoreItems);
-
-// function restoreItems() {
-//   localStorage.setItem("choosen-category", "");
-//   window.location.href = "";
-// }
-
 // stock
 let stockFilter;
 
@@ -598,19 +591,11 @@ function setStoreInterface() {
     //selects products
     stockFilter = StockPro;
 
-    // //adds breadcrumbs
-    // breadcrumbsStore.innerHTML += `<img src="../img/breadcrumb.png" alt="breadcrumb">
-    // <a class="breadcrumb__selected" href="#">Linha PRO</a>`;
-
     //highlights navigation link
     navigationPro.classList.add("_selected");
   } else if (choosenCategory == "fun") {
     //selects products
     stockFilter = StockFun;
-
-    // //adds breadcrumbs
-    // breadcrumbsStore.innerHTML += `<img src="../img/breadcrumb.png" alt="breadcrumb">
-    // <a class="breadcrumb__selected" href="#">Linha FUN</a>`;
 
     //highlights navigation link
     navigationFun.classList.add("_selected");
@@ -618,19 +603,11 @@ function setStoreInterface() {
     //selects products
     stockFilter = StockMini;
 
-    // //adds breadcrumbs
-    // breadcrumbsStore.innerHTML += `<img src="../img/breadcrumb.png" alt="breadcrumb">
-    // <a class="breadcrumb__selected" href="#">Linha MINI</a>`;
-
     //highlights navigation link
     navigationMini.classList.add("_selected");
   } else if (choosenCategory == "acessorios") {
     //selects products
     stockFilter = accessories;
-
-    // //adds breadcrumbs
-    // breadcrumbsStore.innerHTML += `<img src="../img/breadcrumb.png" alt="breadcrumb">
-    // <a class="breadcrumb__selected" href="#">Acessórios</a>`;
 
     //highlights navigation link
     navigationAccessories.classList.add("_selected");

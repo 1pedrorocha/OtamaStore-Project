@@ -40,3 +40,13 @@ productCategory.forEach((element) => {
 function defineChoosenCategory(category) {
   localStorage.setItem("choosen-category", category);
 }
+
+const seeMoreAccessories = document.getElementById(
+  "main_page_link-to_accessories"
+);
+
+seeMoreAccessories.addEventListener("click", (e) => {
+  e.preventDefault();
+  defineChoosenCategory("acessorios");
+  window.location.href = `/pages/loja.html`;
+});
