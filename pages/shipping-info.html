@@ -81,12 +81,12 @@
                     </div>        
                 </div>
 
-                <form action="" class="shipping-info__customer-info__form" data-userinfo>
+                <form action="" class="shipping-info__customer-info__form"  data-userinfo>
 
                     <!-- CLIENT INFO -->
                     <h3>Cliente</h3>
                     <fieldset class="form__field">
-                        <label class="form__field__label" for="nome">Seu nome</label>
+                        <label class="form__field__label" for="name">Seu nome</label>
                         <input
                           name="name"
                           id="name"
@@ -94,12 +94,13 @@
                           type="text"
                           minlength="3"
                           required
+                          autocomplete="off"
                         />
                         <span class="mensagem-erro"></span>
                       </fieldset>
 
                       <fieldset class="form__field">
-                        <label class="form__field__label" for="nome">Seu email</label>
+                        <label class="form__field__label" for="email">Seu email</label>
                         <input
                           name="email"
                           id="email"
@@ -107,6 +108,7 @@
                           type="text"
                           minlength="5"
                           required
+                          autocomplete="email"
                         />
                         <span class="mensagem-erro"></span>
                       </fieldset>
@@ -115,7 +117,7 @@
                       <h3>Entrega</h3>
                       
                       <fieldset class="form__field">
-                        <label class="form__field__label" for="nome">Endereço</label>
+                        <label class="form__field__label" for="address">Endereço</label>
                         <input
                           name="address"
                           id="address"
@@ -123,12 +125,13 @@
                           type="text"
                           minlength="3"
                           required
+                          autocomplete="address-level1"
                         />
                         <span class="mensagem-erro"></span>
                       </fieldset>
 
                       <fieldset class="form__field">
-                        <label class="form__field__label" for="nome">Cidade</label>
+                        <label class="form__field__label" for="city">Cidade</label>
                         <input
                           name="city"
                           id="city"
@@ -136,12 +139,13 @@
                           type="text"
                           minlength="3"
                           required
+                          autocomplete="off"
                         />
                         <span class="mensagem-erro"></span>
                       </fieldset>
 
                       <fieldset class="form__field">
-                        <label class="form__field__label" for="nome">Estado</label>
+                        <label class="form__field__label" for="state">Estado</label>
                         <input
                           name="state"
                           id="state"
@@ -154,7 +158,7 @@
                       </fieldset>
 
                       <fieldset class="form__field">
-                        <label class="form__field__label" for="nome">CEP</label>
+                        <label class="form__field__label" for="cep">CEP</label>
                         <input
                           name="cep"
                           id="cep"
@@ -250,11 +254,11 @@
 
     </footer>
   </body>
-  <script src="../scripts/store.js"></script>
-  <script src="../main.js"></script>
-  <script src="../scripts/indexProductCategories.js"></script>
-  <script src="../scripts/indexCartButton.js"></script>
-  <script src="../scripts/indexAdminNavigation.js"></script>
-  <script src="../scripts/cart.js"></script>
+  <!-- <script src="../scripts/store.js"></script> -->
+  <!-- <script src="../main.js"></script> -->
+  <!-- <script src="../scripts/indexProductCategories.js"></script> -->
+  <!-- <script src="../scripts/indexCartButton.js"></script> -->
+  <!-- <script src="../scripts/indexAdminNavigation.js"></script> -->
+  <!-- <script src="../scripts/cart.js"></script> -->
   
 </html>
