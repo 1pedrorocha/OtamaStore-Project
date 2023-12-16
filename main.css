@@ -2,6 +2,17 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+  background: #f4f4f4;
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background: #d4d4d4;
 }
 
 :root {
