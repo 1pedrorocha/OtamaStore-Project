@@ -7,6 +7,7 @@ const darkBackground = document.querySelector(".background-dark");
 
 cartBtn.addEventListener("click", () => {
   cartContainer.classList.remove("hidden");
+  proceedToCheckout();
 });
 
 cartCloseButton.addEventListener("click", () => {
@@ -418,3 +419,16 @@ function editAmountOnCart() {
 }
 
 editAmountOnCart();
+
+// PROCEED TO CHECKOUT
+
+function proceedToCheckout() {
+  const purchaseButton = document.querySelector(".cart__checkout-button");
+
+  purchaseButton.addEventListener("click", () => {
+    localStorage.setItem("choosen-category", "");
+    localStorage.setItem("look-at", "cart");
+
+    window.location.href = `/pages/shipping-info.html`;
+  });
+}

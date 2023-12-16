@@ -131,4 +131,8 @@ const purchaseButton = document.getElementById("product_page_purchase_button");
 
 purchaseButton.addEventListener("click", (e) => {
   e.preventDefault();
+
+  localStorage.setItem("choosen-category", "");
+  localStorage.setItem("look-at", "buy-now");
+  window.location.href = `/pages/shipping-info.html`;
 });
