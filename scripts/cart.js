@@ -75,7 +75,11 @@ if (addToCartButton) {
     addListToStorage();
     showProductsOnCart();
     addCartAmountToHeader();
+    updateTotalOnCart();
+    editAmountOnCart();
+
     cartContainer.classList.remove("hidden");
+    window.location.href = "#";
   });
 }
 
@@ -125,7 +129,7 @@ function clearCart() {
   addListToStorage();
   showProductsOnCart();
   updateTotalOnCart();
-  adAmountToCartHeader();
+  addCartAmountToHeader();
 }
 
 // // INSERIR VISUALMENTE NO CARRINHO
@@ -161,6 +165,13 @@ function createItemOnCart(item) {
     categoryOnCart = "Otamatone";
   }
 
+  let isDisabledOrNot;
+  if (item.amount > 1) {
+    isDisabledOrNot = "";
+  } else {
+    isDisabledOrNot = "disabled";
+  }
+
   let finalPrice = parseFloat(item.price * item.amount).toFixed(2);
 
   productsListedOnCart.innerHTML += `
@@ -176,7 +187,9 @@ function createItemOnCart(item) {
                   <h4> ${categoryOnCart} </h4>
                   <p>${item.name}</p>
                 </div>
-                <button>
+                <button class="cart__item__remove-button" data-id = "${
+                  item.id
+                }">
                   <img
                     src="../img/cart-remove-product.png"
                     alt="icon to remove product"
@@ -187,13 +200,13 @@ function createItemOnCart(item) {
                 <div class="cart__product__info__bottom__quantity" data-id = "${
                   item.id
                 }">
-                  <button class="cart__product__info__bottom__quantity__button" id="cart_minus-button">
+                  <button class="cart__product__info__bottom__quantity__button ${isDisabledOrNot}" id="cart_minus-button">
                     <img
                       src="../img/cart-product-quantity-minus.png"
                       alt="minus signal"
                     />
                   </button>
-                  <p>${item.amount}</p>
+                  <p class="cart__item__amount">${item.amount}</p>
                   <button
                     class="cart__product__info__bottom__quantity__button"
                     id="cart_plus-button"
@@ -204,7 +217,10 @@ function createItemOnCart(item) {
                     />
                   </button>
                 </div>
-                <h5>R$ ${finalPrice.replace(".", ",")}</h5>
+                <h5 class="cart__item__price">R$ ${finalPrice.replace(
+                  ".",
+                  ","
+                )}</h5>
               </div>
             </div>
           </div>
@@ -239,22 +255,166 @@ function updateTotalOnCart() {
 
 updateTotalOnCart();
 
-// Add to the amount of items in the cart
+// Edit the amount of items in the cart
 
-const minusButtons = document.querySelectorAll("#cart_minus-button");
+function editAmountOnCart() {
+  const minusButtons = document.querySelectorAll("#cart_minus-button");
 
-const plusButtons = document.querySelectorAll("#cart_plus-button");
+  const plusButtons = document.querySelectorAll("#cart_plus-button");
 
-minusButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    console.log("minus");
-    console.log(button.parentNode.dataset.id);
+  // minus button
+  minusButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      let selectedElementId = button.parentNode.dataset.id;
+      cartItems.find((element) => {
+        if (element.id == selectedElementId) {
+          if (element.amount > 2) {
+            element.amount--;
+          } else if (element.amount > 1) {
+            element.amount--;
+            button.classList.add("disabled");
+          } else {
+            button.classList.add("disabled");
+          }
+
+          // animate image
+          imageToBeAnimated =
+            button.parentNode.parentNode.parentNode.parentNode.querySelector(
+              ".cart__product__container__img"
+            );
+
+          imageToBeAnimated.animate(
+            [
+              { transform: "rotate(0)" },
+              { transform: "rotate(-15deg)" },
+              { transform: "rotate(15deg)" },
+              { transform: "rotate(-5deg)" },
+              { transform: "rotate(5deg)" },
+              { transform: "rotate(0)" },
+            ],
+            {
+              duration: 500,
+            }
+          );
+
+          // calculate the total amount of the item
+
+          let cartItemPrice = parseFloat(
+            element.price * element.amount
+          ).toFixed(2);
+
+          cartItemPriceOnScreen =
+            button.parentNode.parentNode.querySelector(".cart__item__price");
+
+          cartItemPriceOnScreen.innerHTML = `
+        R$ ${cartItemPrice.replace(".", ",")}`;
+
+          // calculates the total amount of the cart
+
+          const cartItemAmount = button.parentNode.querySelector(
+            ".cart__item__amount"
+          );
+
+          cartItemAmount.innerHTML = element.amount;
+
+          updateTotalOnCart();
+          addListToStorage();
+          addCartAmountToHeader();
+        }
+      });
+    });
   });
-});
 
-plusButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    console.log("plus");
-    console.log(button.parentNode.dataset.id);
+  // plus button
+  plusButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      let selectedElementId = button.parentNode.dataset.id;
+      cartItems.find((element) => {
+        if (element.id == selectedElementId) {
+          element.amount++;
+
+          // remove disabled class
+          const minusButton = button.parentNode.querySelector(".disabled");
+          if (minusButton) {
+            minusButton.classList.remove("disabled");
+          }
+
+          // animate image
+          imageToBeAnimated =
+            button.parentNode.parentNode.parentNode.parentNode.querySelector(
+              ".cart__product__container__img"
+            );
+
+          imageToBeAnimated.animate(
+            [
+              { transform: "rotate(0)" },
+              { transform: "rotate(15deg)" },
+              { transform: "rotate(-15deg)" },
+              { transform: "rotate(5deg)" },
+              { transform: "rotate(-5deg)" },
+              { transform: "rotate(0)" },
+            ],
+            {
+              duration: 500,
+            }
+          );
+
+          // calculate the total amount of the item
+
+          let cartItemPrice = parseFloat(
+            element.price * element.amount
+          ).toFixed(2);
+
+          cartItemPriceOnScreen =
+            button.parentNode.parentNode.querySelector(".cart__item__price");
+
+          cartItemPriceOnScreen.innerHTML = `
+        R$ ${cartItemPrice.replace(".", ",")}`;
+
+          // calculates the total amount of the cart
+
+          const cartItemAmount = button.parentNode.querySelector(
+            ".cart__item__amount"
+          );
+
+          cartItemAmount.innerHTML = element.amount;
+
+          updateTotalOnCart();
+          addListToStorage();
+          addCartAmountToHeader();
+        }
+      });
+    });
   });
-});
+
+  // remove item
+
+  const removeItemButon = document.querySelectorAll(
+    ".cart__item__remove-button"
+  );
+
+  removeItemButon.forEach((button) => {
+    button.addEventListener("click", () => {
+      let cartItemsWithoutSelectedItem = [];
+
+      let itemToBeRemovedId = button.dataset.id;
+
+      cartItems.forEach((item) => {
+        if (item.id != itemToBeRemovedId) {
+          cartItemsWithoutSelectedItem.push(item);
+        }
+      });
+
+      cartItems = cartItemsWithoutSelectedItem;
+
+      // remove the item from the list
+      button.parentNode.parentNode.parentNode.remove(this);
+
+      addListToStorage();
+      updateTotalOnCart();
+      addCartAmountToHeader();
+    });
+  });
+}
+
+editAmountOnCart();

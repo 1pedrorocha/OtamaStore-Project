@@ -85,6 +85,26 @@
   width: 70px;
 }
 
+/* @keyframes cartProductAnimation {
+  20% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(15deg);
+  }
+  60% {
+    transform: rotate(-15deg);
+  }
+  80% {
+    transform: rotate(0deg);
+  }
+}
+
+.cart__product__container__img:hover {
+  animation-name: cartProductAnimation;
+  animation-duration: 0.5s;
+} */
+
 .cart__product__info {
   width: 100%;
   display: flex;
@@ -204,4 +224,8 @@
 .cart__product-list__container::-webkit-scrollbar-thumb {
   border-radius: 50px;
   background: #d4d4d4;
+}
+
+.disabled {
+  opacity: 0.3;
 }
