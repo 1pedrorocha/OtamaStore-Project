@@ -17,6 +17,7 @@
         <!-- main page styles   -->
         <link rel="stylesheet" href="../css/store.css">
         <link rel="stylesheet" href="../css/shipping-info.css">
+        <link rel="stylesheet" href="../css/payment-info.css">
         <link rel="stylesheet" href="../css/footer.css">
 
     <link rel="stylesheet" href="../hide.css" />
@@ -69,7 +70,8 @@
     </header>
 
     <section class="shipping-info__container">
-      <!-- FORM -->
+
+        <!-- CUSTOMER -->
 
         <div class="shipping-info__customer-info">
             <div class="shipping-info__customer-info__wrapper">
@@ -80,98 +82,96 @@
                     <img src="../img/breadcrumb.png" alt="breadcrumb">
                     <a class="breadcrumb__not-selected"href="./loja.html">Loja</a>
                     <img src="../img/breadcrumb.png" alt="breadcrumb">
-                    <a class="breadcrumb__selected" href="#">Dados de Envio</a>
+                    <a class="breadcrumb__not-selected"href="./shipping-info.html">Envio</a>
+                    <img src="../img/breadcrumb.png" alt="breadcrumb">
+                    <a class="breadcrumb__selected" href="#">Fechar Pedido</a>
                     </div>        
                 </div>
 
                 <form action="" class="shipping-info__customer-info__form"  data-userinfo>
 
                     <!-- CLIENT INFO -->
-                    <h3>Cliente</h3>
+
+                    <div class="payment__client-info">
+                        <img src="../img/payment-info-user-icon.png" alt="user icon">
+                        <div class="payment__client-info__information">
+                            <h5>Contato</h5>
+                            <p>Pedro Rocha</p>
+                            <p>pedro.rocha@email.com</p>
+                        </div>
+                    </div>
+
+                    <div class="payment__client-info">
+                        <img src="../img/payment-info-deliver-icon.png" alt="user icon">
+                        <div class="payment__client-info__information">
+                            <h5>Endereço de entrega</h5>
+                            <p>Rua João Guanabara, 456 - Jardim Novo</p>
+                            <p>São Paulo, SP - 05423-067</p>
+                        </div>
+                    </div>
+
+                    
+                    <h3>Informações de pagamento</h3>
                     <fieldset class="form__field">
-                        <label class="form__field__label" for="name">Seu nome</label>
+                        <label class="form__field__label" for="name">Nome no cartão</label>
                         <input
-                          name="name"
-                          id="name"
+                          name="card-name"
+                          id="card-name"
                           class="form_field__text-input"
                           type="text"
                           minlength="3"
                           required
-                          autocomplete="off"
+                          autocomplete="cc-name"
                         />
                         <span class="mensagem-erro"></span>
                       </fieldset>
 
-                      <fieldset class="form__field">
-                        <label class="form__field__label" for="email">Seu email</label>
+
+                    <fieldset class="form__field">
+                        <label class="form__field__label" for="name">Número do cartão</label>
                         <input
-                          name="email"
-                          id="email"
+                          name="card-number"
+                          id="card-number"
                           class="form_field__text-input"
                           type="text"
-                          minlength="5"
+                          minlength="3"
                           required
-                          autocomplete="email"
+                          autocomplete="cc-number"
                         />
                         <span class="mensagem-erro"></span>
                       </fieldset>
 
-                      <!-- SHIPPING INFO -->
-                      <h3>Entrega</h3>
+                      <div class="form__credit-card-info">
+                        <fieldset class="form__field">
+                            <label class="form__field__label" for="email">Validade</label>
+                            <input
+                              name="validade"
+                              id="validade"
+                              class="form_field__text-input"
+                              type="date"
+                              required
+                            />
+                            <span class="mensagem-erro"></span>
+                          </fieldset>
+
+                          <fieldset class="form__field">
+                            <label class="form__field__label" for="email">CVV</label>
+                            <input
+                              name="cvv"
+                              id="validade"
+                              class="form_field__text-input"
+                              type="number"
+                              required
+                            />
+                            <span class="mensagem-erro"></span>
+                          </fieldset>
+    
+
+
+                      </div>
+
                       
-                      <fieldset class="form__field">
-                        <label class="form__field__label" for="address">Endereço</label>
-                        <input
-                          name="address"
-                          id="address"
-                          class="form_field__text-input"
-                          type="text"
-                          minlength="3"
-                          required
-                          autocomplete="address-level1"
-                        />
-                        <span class="mensagem-erro"></span>
-                      </fieldset>
-
-                      <fieldset class="form__field">
-                        <label class="form__field__label" for="city">Cidade</label>
-                        <input
-                          name="city"
-                          id="city"
-                          class="form_field__text-input"
-                          type="text"
-                          minlength="3"
-                          required
-                          autocomplete="off"
-                        />
-                        <span class="mensagem-erro"></span>
-                      </fieldset>
-
-                      <fieldset class="form__field">
-                        <label class="form__field__label" for="state">Estado</label>
-                        <input
-                          name="state"
-                          id="state"
-                          class="form_field__text-input"
-                          type="text"
-                          minlength="3"
-                          required
-                        />
-                        <span class="mensagem-erro"></span>
-                      </fieldset>
-
-                      <fieldset class="form__field">
-                        <label class="form__field__label" for="cep">CEP</label>
-                        <input
-                          name="cep"
-                          id="cep"
-                          class="form_field__text-input"
-                          type="text"
-                          minlength="3"
-                          required
-                        />
-                        <span class="mensagem-erro"></span>
-                      </fieldset>
+                      
 
                       <div class="form__buttons">
                         <a class="form__buttons__go-back" href="./loja.html">Voltar à loja</a>
@@ -188,18 +188,21 @@
             </div>
         </div>
 
+
+        <!-- PRODUCTS TO BE PAID -->
+
         <div class="shipping-info__cart">
             <div class="shipping-info__cart__wrapper">
                 <h3>Carrinho</h3>
                 <!-- PRODUCT -->
                 <div class="shipping-info__cart__product-list">
-                  
+                    
                 </div>
                 <hr />
                 <!-- TOTAIS -->
                 <div class="shipping-info__cart__total">
                     <p>Subtotal</p>
-                    <h5 id="purchase-subtotal-amount">R$ 499,90</h5>
+                    <h5>R$ 499,90</h5>
                 </div>
                 <div class="shipping-info__cart__total">
                     <p>Frete</p>
@@ -209,7 +212,7 @@
                 <hr />
                 <div class="shipping-info__cart__total">
                     <p>Total</p>
-                    <h2 id="purchase-total-amount">R$ 499,90</h2>
+                    <h2>R$ 499,90</h2>
                 </div>
 
                 

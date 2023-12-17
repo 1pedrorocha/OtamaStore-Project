@@ -231,7 +231,7 @@ function createItemOnCart(item) {
 
 showProductsOnCart();
 
-// atualizar total
+// updates the total
 
 const cartTotalAmountOnScreen = document.getElementById("cart_total_amount");
 

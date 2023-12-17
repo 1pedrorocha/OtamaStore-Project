@@ -1,0 +1,38 @@
+.payment__client-info {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 16px;
+
+  padding: 16px 32px;
+  border-radius: 16px;
+  box-shadow: 0px 0px 8px 0px rgba(87, 81, 134, 0.1);
+}
+
+.payment__client-info img {
+  height: 24px;
+  width: 24px;
+  margin-right: 32px;
+}
+
+.payment__client-info__information h5 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.payment__client-info__information p {
+  color: var(--medium-gray);
+  font-size: 14px;
+}
+
+.form__credit-card-info {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  width: 100%;
+}
+
+.form__credit-card-info > .form__field {
+  width: 100%;
+}
