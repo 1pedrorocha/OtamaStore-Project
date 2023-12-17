@@ -130,42 +130,44 @@ const stateField = document.getElementById("state");
 
 // CONSULTING CEP
 
-cepField.addEventListener("blur", () => {
-  if (cepField.value.length !== 8) {
-    document.querySelector(".mensagem-erro-cep").textContent = "CEP Inválido";
+if (cepField) {
+  cepField.addEventListener("blur", () => {
+    if (cepField.value.length !== 8) {
+      document.querySelector(".mensagem-erro-cep").textContent = "CEP Inválido";
 
-    addressField.value = "";
-    neighborhoodField.value = "";
-    cityField.value = "";
-    stateField.value = "";
-    return;
-  }
-  document.querySelector(".mensagem-erro-cep").textContent = "";
+      addressField.value = "";
+      neighborhoodField.value = "";
+      cityField.value = "";
+      stateField.value = "";
+      return;
+    }
+    document.querySelector(".mensagem-erro-cep").textContent = "";
 
-  let url = `https://viacep.com.br/ws/${cepField.value}/json/`;
+    let url = `https://viacep.com.br/ws/${cepField.value}/json/`;
 
-  fetch(url).then(function (response) {
-    response.json().then(function (data) {
-      if (data.erro == true) {
-        document.querySelector(".mensagem-erro-cep").textContent =
-          "CEP Inválido";
+    fetch(url).then(function (response) {
+      response.json().then(function (data) {
+        if (data.erro == true) {
+          document.querySelector(".mensagem-erro-cep").textContent =
+            "CEP Inválido";
 
-        addressField.value = "";
-        neighborhoodField.value = "";
-        cityField.value = "";
-        stateField.value = "";
-        return;
-      }
+          addressField.value = "";
+          neighborhoodField.value = "";
+          cityField.value = "";
+          stateField.value = "";
+          return;
+        }
 
-      addressField.value = `${data.logradouro}, nº`;
-      neighborhoodField.value = data.bairro;
-      cityField.value = data.localidade;
-      stateField.value = data.uf;
+        addressField.value = `${data.logradouro}, nº`;
+        neighborhoodField.value = data.bairro;
+        cityField.value = data.localidade;
+        stateField.value = data.uf;
 
-      addressField.focus();
+        addressField.focus();
+      });
     });
   });
-});
+}
 
 // CAPTURING INPUT DATA
 
@@ -180,7 +182,9 @@ function checkName() {
   }
 }
 
-nameField.addEventListener("blur", checkName);
+if (nameField) {
+  nameField.addEventListener("blur", checkName);
+}
 
 function checkEmail() {
   if (emailField.value == "") {
@@ -191,7 +195,9 @@ function checkEmail() {
   }
 }
 
-emailField.addEventListener("blur", checkEmail);
+if (emailField) {
+  emailField.addEventListener("blur", checkEmail);
+}
 
 function checkCep() {
   if (cepField.value == "") {
@@ -204,59 +210,48 @@ function checkCep() {
 
 // CONTINUE
 
-orderContinueButton.addEventListener("click", (button) => {
-  button.preventDefault();
+if (orderContinueButton) {
+  orderContinueButton.addEventListener("click", (button) => {
+    button.preventDefault();
 
-  checkName();
-  checkEmail();
-  checkCep();
+    checkName();
+    checkEmail();
+    checkCep();
 
-  if (nameField.value != "" && cepField.value != "" && emailField.value != "") {
-    const userData = {
-      name: nameField.value,
-      email: emailField.value,
-    };
+    if (
+      nameField.value != "" &&
+      cepField.value != "" &&
+      emailField.value != ""
+    ) {
+      const userData = {
+        name: nameField.value,
+        email: emailField.value,
+      };
 
-    const orderAddress = {
-      cep: cepField.value,
-      address: addressField.value,
-      neighborhood: neighborhoodField.value,
-      compl: complField.value,
-      city: cityField.value,
-      state: stateField.value,
-    };
+      const orderAddress = {
+        cep: cepField.value,
+        address: addressField.value,
+        neighborhood: neighborhoodField.value,
+        compl: complField.value,
+        city: cityField.value,
+        state: stateField.value,
+      };
 
-    // Setting the final Order
+      // Setting the final Order
 
-    //set customer info on storage
-    localStorage.setItem("order-customer-data", JSON.stringify(userData));
+      //set customer info on storage
+      localStorage.setItem("order-customer-data", JSON.stringify(userData));
 
-    //set customer address on storage
-    localStorage.setItem("order-address", JSON.stringify(orderAddress));
+      //set customer address on storage
+      localStorage.setItem("order-address", JSON.stringify(orderAddress));
 
-    //set items on cart on storage
-    localStorage.setItem("order-items", JSON.stringify(itemListOnStorage));
+      //set items on cart on storage
+      localStorage.setItem("order-items", JSON.stringify(itemListOnStorage));
 
-    //set total amount on storage
-    localStorage.setItem("order-total", totalAmount);
+      //set total amount on storage
+      localStorage.setItem("order-total", totalAmount);
 
-    window.location.href = `/pages/payment-info.html`;
-  }
-});
-
-// const orderInfo = {
-//   id: "",
-//   client: {
-//     name: "",
-//     email: "",
-//   },
-//   address: {
-//     address: "",
-//     city: "",
-//     state: "",
-//     cep: "",
-//   },
-//   products: [],
-//   total: 0,
-//   status: "em aberto",
-// };
+      window.location.href = `/pages/payment-info.html`;
+    }
+  });
+}

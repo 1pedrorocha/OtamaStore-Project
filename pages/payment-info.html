@@ -96,8 +96,8 @@
                         <img src="../img/payment-info-user-icon.png" alt="user icon">
                         <div class="payment__client-info__information">
                             <h5>Contato</h5>
-                            <p>Pedro Rocha</p>
-                            <p>pedro.rocha@email.com</p>
+                            <p id="customer-name">Pedro Rocha</p>
+                            <p id="customer-email">pedro.rocha@email.com</p>
                         </div>
                     </div>
 
@@ -105,15 +105,15 @@
                         <img src="../img/payment-info-deliver-icon.png" alt="user icon">
                         <div class="payment__client-info__information">
                             <h5>Endereço de entrega</h5>
-                            <p>Rua João Guanabara, 456 - Jardim Novo</p>
-                            <p>São Paulo, SP - 05423-067</p>
+                            <p id="address-1">Rua João Guanabara, 456 - Jardim Novo</p>
+                            <p id="address-2">São Paulo, SP - 05423-067</p>
                         </div>
                     </div>
 
                     
                     <h3>Informações de pagamento</h3>
                     <fieldset class="form__field">
-                        <label class="form__field__label" for="name">Nome no cartão</label>
+                        <label class="form__field__label" for="card-name">Nome no cartão</label>
                         <input
                           name="card-name"
                           id="card-name"
@@ -123,12 +123,12 @@
                           required
                           autocomplete="cc-name"
                         />
-                        <span class="mensagem-erro"></span>
+                        <span class="mensagem-erro mensagem-erro-card-name"></span>
                       </fieldset>
 
 
                     <fieldset class="form__field">
-                        <label class="form__field__label" for="name">Número do cartão</label>
+                        <label class="form__field__label" for="card-number">Número do cartão</label>
                         <input
                           name="card-number"
                           id="card-number"
@@ -138,32 +138,32 @@
                           required
                           autocomplete="cc-number"
                         />
-                        <span class="mensagem-erro"></span>
+                        <span class="mensagem-erro mensagem-erro-card-number"></span>
                       </fieldset>
 
                       <div class="form__credit-card-info">
                         <fieldset class="form__field">
-                            <label class="form__field__label" for="email">Validade</label>
+                            <label class="form__field__label" for="expiration">Validade</label>
                             <input
-                              name="validade"
-                              id="validade"
+                              name="expiration"
+                              id="expiration"
                               class="form_field__text-input"
                               type="date"
                               required
                             />
-                            <span class="mensagem-erro"></span>
+                            <span class="mensagem-erro mensagem-erro-card-expiration"></span>
                           </fieldset>
 
                           <fieldset class="form__field">
-                            <label class="form__field__label" for="email">CVV</label>
+                            <label class="form__field__label" for="cvv">CVV</label>
                             <input
                               name="cvv"
-                              id="validade"
+                              id="cvv"
                               class="form_field__text-input"
                               type="number"
                               required
                             />
-                            <span class="mensagem-erro"></span>
+                            <span class="mensagem-erro mensagem-erro-card-cvv"></span>
                           </fieldset>
     
 
@@ -177,8 +177,8 @@
                         <a class="form__buttons__go-back" href="./loja.html">Voltar à loja</a>
                         <input
                         class="submit-button"
-                          value="Continue"
-                          id="enviar"
+                          value="Pagar"
+                          id="payment-button"
                           data-botao-enviar
                           type="submit"
                         />
@@ -199,10 +199,10 @@
                     
                 </div>
                 <hr />
-                <!-- TOTAIS -->
+                <!-- TOTALS -->
                 <div class="shipping-info__cart__total">
                     <p>Subtotal</p>
-                    <h5>R$ 499,90</h5>
+                    <h5 id="purchase-subtotal-amount">R$ 499,90</h5>
                 </div>
                 <div class="shipping-info__cart__total">
                     <p>Frete</p>
@@ -212,7 +212,7 @@
                 <hr />
                 <div class="shipping-info__cart__total">
                     <p>Total</p>
-                    <h2>R$ 499,90</h2>
+                    <h2 id="purchase-total-amount">R$ 499,90</h2>
                 </div>
 
                 
@@ -249,6 +249,7 @@
     </footer>
   </body>
   <script src="../scripts/purchase.js"></script>
+  <script src="../scripts/paymentInfo.js"></script>
   <!-- <script src="../scripts/store.js"></script> -->
   <!-- <script src="../main.js"></script> -->
   <!-- <script src="../scripts/indexProductCategories.js"></script> -->
