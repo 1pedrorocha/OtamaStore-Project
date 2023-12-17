@@ -126,20 +126,38 @@ if (paymentButton) {
       cardExpirationDate.value != "" &&
       cardCvv.value != ""
     ) {
-      // remove cart from local storage
-      const checkLookAt = localStorage.getItem("look-at");
-
-      //   if (checkLookAt == "cart") {
-      //     localStorage.setItem("cart", "");
-      //   }
-      //   localStorage.setItem("selected-product-name", "");
-      //   localStorage.setItem("selected-product-price", "");
-      //   localStorage.setItem("selected-product-gallery", "");
-      //   localStorage.setItem("selected-category", "");
-      //   localStorage.setItem("selected-product-id", "");
-      //   localStorage.setItem("selected-product-image", "");
-
       window.location.href = `/pages/success.html`;
     }
+  });
+}
+
+// Clean cart when go back to store
+
+const goBackToStoreButton = document.getElementById("go-back-to-store");
+
+if (goBackToStoreButton) {
+  goBackToStoreButton.addEventListener("click", (button) => {
+    button.preventDefault();
+
+    // remove cart from local storage
+    const checkLookAt = localStorage.getItem("look-at");
+
+    if (checkLookAt == "cart") {
+      localStorage.setItem("cart", "");
+    }
+    localStorage.setItem("selected-product-name", "");
+    localStorage.setItem("selected-product-price", "");
+    localStorage.setItem("selected-product-gallery", "");
+    localStorage.setItem("selected-category", "");
+    localStorage.setItem("selected-product-id", "");
+    localStorage.setItem("selected-product-image", "");
+    localStorage.setItem("choosen-category", "");
+    localStorage.setItem("order-address", "");
+    localStorage.setItem("order-items", "");
+    localStorage.setItem("order-total", "");
+    localStorage.setItem("order-customer-data", "");
+    localStorage.setItem("look-at", "cart");
+
+    window.location.href = `/pages/loja.html`;
   });
 }
