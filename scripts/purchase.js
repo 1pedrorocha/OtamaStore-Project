@@ -1,20 +1,3 @@
-// const orderInfo = {
-//   id: "",
-//   client: {
-//     name: "",
-//     email: "",
-//   },
-//   address: {
-//     address: "",
-//     city: "",
-//     state: "",
-//     cep: "",
-//   },
-//   products: [],
-//   total: 0,
-//   status: "em aberto",
-// };
-
 // PRODUCTS TO BE PAID
 
 // defines if it is from cart or from the "buy now" option
@@ -115,17 +98,17 @@ function updateTotalAmount() {
 
 updateTotalAmount();
 
-// Setting the final Order
-
-function setOrder() {
-  // add data about the order
-  localStorage.setItem("order-total", totalAmount);
-  localStorage.setItem("order-items", JSON.stringify(itemListOnStorage));
-}
-
 // FORM FIELDS
 
-//state
+// USER
+// name
+const nameField = document.getElementById("name");
+
+//email
+const emailField = document.getElementById("email");
+
+// ADDRESS
+//cep
 const cepField = document.getElementById("cep");
 
 // error message
@@ -134,17 +117,9 @@ const errorCEP = document.querySelector(".mensagem-erro-cep");
 // button
 const orderContinueButton = document.getElementById("continue");
 
-// name
-const nameField = document.getElementById("name");
-
-//email
-const emailField = document.getElementById("email");
-
 //address
 const addressField = document.getElementById("address");
-
 const neighborhoodField = document.getElementById("neighborhood");
-
 const complField = document.getElementById("compl");
 
 //city
@@ -182,17 +157,106 @@ cepField.addEventListener("blur", () => {
         return;
       }
 
-      addressField.value = data.logradouro;
+      addressField.value = `${data.logradouro}, nº`;
       neighborhoodField.value = data.bairro;
       cityField.value = data.localidade;
       stateField.value = data.uf;
+
+      addressField.focus();
     });
   });
 });
 
 // CAPTURING INPUT DATA
 
+// checking required fields
+
+function checkName() {
+  if (nameField.value == "") {
+    document.querySelector(".mensagem-erro-nome").textContent =
+      "Informe seu nome";
+  } else {
+    document.querySelector(".mensagem-erro-nome").textContent = "";
+  }
+}
+
+nameField.addEventListener("blur", checkName);
+
+function checkEmail() {
+  if (emailField.value == "") {
+    document.querySelector(".mensagem-erro-email").textContent =
+      "Informe seu email";
+  } else {
+    document.querySelector(".mensagem-erro-email").textContent = "";
+  }
+}
+
+emailField.addEventListener("blur", checkEmail);
+
+function checkCep() {
+  if (cepField.value == "") {
+    document.querySelector(".mensagem-erro-cep").textContent =
+      "Informe seu CEP";
+  } else {
+    document.querySelector(".mensagem-erro-cep").textContent = "";
+  }
+}
+
+// CONTINUE
+
 orderContinueButton.addEventListener("click", (button) => {
   button.preventDefault();
-  console.log("test");
+
+  checkName();
+  checkEmail();
+  checkCep();
+
+  if (nameField.value != "" && cepField.value != "" && emailField.value != "") {
+    const userData = {
+      name: nameField.value,
+      email: emailField.value,
+    };
+
+    const orderAddress = {
+      cep: cepField.value,
+      address: addressField.value,
+      neighborhood: neighborhoodField.value,
+      compl: complField.value,
+      city: cityField.value,
+      state: stateField.value,
+    };
+
+    // Setting the final Order
+
+    //set customer info on storage
+    localStorage.setItem("order-customer-data", JSON.stringify(userData));
+
+    //set customer address on storage
+    localStorage.setItem("order-address", JSON.stringify(orderAddress));
+
+    //set items on cart on storage
+    localStorage.setItem("order-items", JSON.stringify(itemListOnStorage));
+
+    //set total amount on storage
+    localStorage.setItem("order-total", totalAmount);
+
+    window.location.href = `/pages/payment-info.html`;
+  }
 });
+
+// const orderInfo = {
+//   id: "",
+//   client: {
+//     name: "",
+//     email: "",
+//   },
+//   address: {
+//     address: "",
+//     city: "",
+//     state: "",
+//     cep: "",
+//   },
+//   products: [],
+//   total: 0,
+//   status: "em aberto",
+// };

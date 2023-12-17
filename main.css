@@ -154,4 +154,6 @@ body {
 
 .mensagem-erro {
   color: var(--alert-red);
+  font-size: 14px;
+  margin-top: 4px;
 }
