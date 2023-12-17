@@ -21,7 +21,7 @@ const address1OnScreen = document.getElementById("address-1");
 const address2OnScreen = document.getElementById("address-2");
 
 if (address1OnScreen) {
-  address1OnScreen.textContent = `${orderAddressOnStorage.address} - ${orderAddressOnStorage.neighborhood} ${orderAddressOnStorage.compl}`;
+  address1OnScreen.textContent = `${orderAddressOnStorage.address} ${orderAddressOnStorage.compl} - ${orderAddressOnStorage.neighborhood}`;
 
   address2OnScreen.textContent = `${orderAddressOnStorage.city}, ${orderAddressOnStorage.state} | ${orderAddressOnStorage.cep}`;
 }
@@ -126,6 +126,19 @@ if (paymentButton) {
       cardExpirationDate.value != "" &&
       cardCvv.value != ""
     ) {
+      // remove cart from local storage
+      const checkLookAt = localStorage.getItem("look-at");
+
+      //   if (checkLookAt == "cart") {
+      //     localStorage.setItem("cart", "");
+      //   }
+      //   localStorage.setItem("selected-product-name", "");
+      //   localStorage.setItem("selected-product-price", "");
+      //   localStorage.setItem("selected-product-gallery", "");
+      //   localStorage.setItem("selected-category", "");
+      //   localStorage.setItem("selected-product-id", "");
+      //   localStorage.setItem("selected-product-image", "");
+
       window.location.href = `/pages/success.html`;
     }
   });
