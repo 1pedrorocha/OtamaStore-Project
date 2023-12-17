@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="../css/store.css">
         <link rel="stylesheet" href="../css/shipping-info.css">
         <link rel="stylesheet" href="../css/payment-info.css">
+        <link rel="stylesheet" href="../css/success.css">
         <link rel="stylesheet" href="../css/footer.css">
 
     <link rel="stylesheet" href="../hide.css" />
@@ -88,103 +89,18 @@
                     </div>        
                 </div>
 
-                <form action="" class="shipping-info__customer-info__form"  data-userinfo>
+                <div class="success-content">
 
-                    <!-- CLIENT INFO -->
+                    <img src="../img/success-check-icon.png" alt="">
 
-                    <div class="payment__client-info">
-                        <img src="../img/payment-info-user-icon.png" alt="user icon">
-                        <div class="payment__client-info__information">
-                            <h5>Contato</h5>
-                            <p id="customer-name">Pedro Rocha</p>
-                            <p id="customer-email">pedro.rocha@email.com</p>
-                        </div>
-                    </div>
+                    <h2>Pedido concluído!</h2>
 
-                    <div class="payment__client-info">
-                        <img src="../img/payment-info-deliver-icon.png" alt="user icon">
-                        <div class="payment__client-info__information">
-                            <h5>Endereço de entrega</h5>
-                            <p id="address-1">Rua João Guanabara, 456 - Jardim Novo</p>
-                            <p id="address-2">São Paulo, SP - 05423-067</p>
-                        </div>
-                    </div>
+                    <p>Seu pedido foi concluido com sucesso.</p>
+                    <p>Em breve, você receberá informações por email sobre o produto e a previsão de entrega.</p>
 
                     
-                    <h3>Informações de pagamento</h3>
-                    <fieldset class="form__field">
-                        <label class="form__field__label" for="card-name">Nome no cartão</label>
-                        <input
-                          name="card-name"
-                          id="card-name"
-                          class="form_field__text-input"
-                          type="text"
-                          minlength="3"
-                          required
-                          autocomplete="cc-name"
-                        />
-                        <span class="mensagem-erro mensagem-erro-card-name"></span>
-                      </fieldset>
-
-
-                    <fieldset class="form__field">
-                        <label class="form__field__label" for="card-number">Número do cartão</label>
-                        <input
-                          name="card-number"
-                          id="card-number"
-                          class="form_field__text-input"
-                          type="text"
-                          minlength="3"
-                          required
-                          autocomplete="cc-number"
-                        />
-                        <span class="mensagem-erro mensagem-erro-card-number"></span>
-                      </fieldset>
-
-                      <div class="form__credit-card-info">
-                        <fieldset class="form__field">
-                            <label class="form__field__label" for="expiration">Validade</label>
-                            <input
-                              name="expiration"
-                              id="expiration"
-                              class="form_field__text-input"
-                              type="date"
-                              required
-                            />
-                            <span class="mensagem-erro mensagem-erro-card-expiration"></span>
-                          </fieldset>
-
-                          <fieldset class="form__field">
-                            <label class="form__field__label" for="cvv">CVV</label>
-                            <input
-                              name="cvv"
-                              id="cvv"
-                              class="form_field__text-input"
-                              type="number"
-                              required
-                            />
-                            <span class="mensagem-erro mensagem-erro-card-cvv"></span>
-                          </fieldset>
-    
-
-
-                      </div>
-
-                      
-                      
-
-                      <div class="form__buttons">
-                        <a class="form__buttons__go-back" href="./loja.html">Voltar à loja</a>
-                        <input
-                        class="submit-button"
-                          value="Pagar"
-                          id="payment-button"
-                          data-botao-enviar
-                          type="submit"
-                        />
-                      </div>            
-                      
-                </form>
+                    <a class="back-to-store-button" href="./loja.html">Voltar à loja</a>
+                </div>
             </div>
         </div>
 

@@ -11,17 +11,20 @@ const orderAddressOnStorage = JSON.parse(localStorage.getItem("order-address"));
 const customerNameOnScreen = document.getElementById("customer-name");
 const customerEmailOnScreen = document.getElementById("customer-email");
 
-customerNameOnScreen.textContent = customerDataOnStorage.name;
-customerEmailOnScreen.textContent = customerDataOnStorage.email;
+if (customerNameOnScreen) {
+  customerNameOnScreen.textContent = customerDataOnStorage.name;
+  customerEmailOnScreen.textContent = customerDataOnStorage.email;
+}
 
 // showing order address on screen
 const address1OnScreen = document.getElementById("address-1");
 const address2OnScreen = document.getElementById("address-2");
 
-address1OnScreen.textContent = `${orderAddressOnStorage.address} - ${orderAddressOnStorage.neighborhood} ${orderAddressOnStorage.compl}`;
+if (address1OnScreen) {
+  address1OnScreen.textContent = `${orderAddressOnStorage.address} - ${orderAddressOnStorage.neighborhood} ${orderAddressOnStorage.compl}`;
 
-address2OnScreen.textContent = `${orderAddressOnStorage.city}, ${orderAddressOnStorage.state} | ${orderAddressOnStorage.cep}`;
-
+  address2OnScreen.textContent = `${orderAddressOnStorage.city}, ${orderAddressOnStorage.state} | ${orderAddressOnStorage.cep}`;
+}
 // FORM FIELDS
 // card name
 const cardNameField = document.getElementById("card-name");
@@ -47,7 +50,9 @@ function checkCardName() {
   }
 }
 
-cardNameField.addEventListener("blur", checkCardName);
+if (cardNameField) {
+  cardNameField.addEventListener("blur", checkCardName);
+}
 
 // check card number
 function checkCardNumber() {
@@ -59,7 +64,9 @@ function checkCardNumber() {
   }
 }
 
-cardNumberField.addEventListener("blur", checkCardNumber);
+if (cardNumberField) {
+  cardNumberField.addEventListener("blur", checkCardNumber);
+}
 
 // check card expiration
 function checkCardExpiration() {
@@ -82,7 +89,9 @@ function checkCardExpiration() {
   }
 }
 
-cardExpirationDate.addEventListener("blur", checkCardExpiration);
+if (cardExpirationDate) {
+  cardExpirationDate.addEventListener("blur", checkCardExpiration);
+}
 
 //check cvv
 function checkCardCvv() {
@@ -94,26 +103,30 @@ function checkCardCvv() {
   }
 }
 
-cardCvv.addEventListener("blur", checkCardCvv);
+if (cardCvv) {
+  cardCvv.addEventListener("blur", checkCardCvv);
+}
 
 // PAYMENT BUTTON
 
 const paymentButton = document.getElementById("payment-button");
 
-paymentButton.addEventListener("click", (button) => {
-  button.preventDefault();
+if (paymentButton) {
+  paymentButton.addEventListener("click", (button) => {
+    button.preventDefault();
 
-  checkCardName();
-  checkCardNumber();
-  checkCardExpiration();
-  checkCardCvv();
+    checkCardName();
+    checkCardNumber();
+    checkCardExpiration();
+    checkCardCvv();
 
-  if (
-    cardNameField.value != "" &&
-    cardNumberField.value != "" &&
-    cardExpirationDate.value != "" &&
-    cardCvv.value != ""
-  ) {
-    console.log("pagou!");
-  }
-});
+    if (
+      cardNameField.value != "" &&
+      cardNumberField.value != "" &&
+      cardExpirationDate.value != "" &&
+      cardCvv.value != ""
+    ) {
+      window.location.href = `/pages/success.html`;
+    }
+  });
+}
