@@ -149,3 +149,9 @@ body {
 .skeleton-placeholder {
   height: 100vh;
 }
+
+/* ERROR MESSAGES */
+
+.mensagem-erro {
+  color: var(--alert-red);
+}

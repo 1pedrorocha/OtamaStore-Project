@@ -1,19 +1,19 @@
-const orderInfo = {
-  id: "",
-  client: {
-    name: "",
-    email: "",
-  },
-  address: {
-    address: "",
-    city: "",
-    state: "",
-    cep: "",
-  },
-  products: [],
-  total: 0,
-  status: "em aberto",
-};
+// const orderInfo = {
+//   id: "",
+//   client: {
+//     name: "",
+//     email: "",
+//   },
+//   address: {
+//     address: "",
+//     city: "",
+//     state: "",
+//     cep: "",
+//   },
+//   products: [],
+//   total: 0,
+//   status: "em aberto",
+// };
 
 // PRODUCTS TO BE PAID
 
@@ -96,9 +96,9 @@ const purchaseSubtotalAmount = document.getElementById(
 
 const purchaseTotalAmount = document.getElementById("purchase-total-amount");
 
-function updateTotalAmount() {
-  let totalAmount = 0;
+let totalAmount = 0;
 
+function updateTotalAmount() {
   for (var i = 0; i < itemListOnStorage.length; i++) {
     let productPrice = itemListOnStorage[i].price;
     let productAmount = itemListOnStorage[i].amount;
@@ -111,8 +111,88 @@ function updateTotalAmount() {
     .replace(".", ",")}`;
 
   purchaseTotalAmount.textContent = `${purchaseSubtotalAmount.textContent}`;
-
-  localStorage.setItem("total", totalAmount);
 }
 
 updateTotalAmount();
+
+// Setting the final Order
+
+function setOrder() {
+  // add data about the order
+  localStorage.setItem("order-total", totalAmount);
+  localStorage.setItem("order-items", JSON.stringify(itemListOnStorage));
+}
+
+// FORM FIELDS
+
+//state
+const cepField = document.getElementById("cep");
+
+// error message
+const errorCEP = document.querySelector(".mensagem-erro-cep");
+
+// button
+const orderContinueButton = document.getElementById("continue");
+
+// name
+const nameField = document.getElementById("name");
+
+//email
+const emailField = document.getElementById("email");
+
+//address
+const addressField = document.getElementById("address");
+
+const neighborhoodField = document.getElementById("neighborhood");
+
+const complField = document.getElementById("compl");
+
+//city
+const cityField = document.getElementById("city");
+
+//state
+const stateField = document.getElementById("state");
+
+// CONSULTING CEP
+
+cepField.addEventListener("blur", () => {
+  if (cepField.value.length !== 8) {
+    document.querySelector(".mensagem-erro-cep").textContent = "CEP Inválido";
+
+    addressField.value = "";
+    neighborhoodField.value = "";
+    cityField.value = "";
+    stateField.value = "";
+    return;
+  }
+  document.querySelector(".mensagem-erro-cep").textContent = "";
+
+  let url = `https://viacep.com.br/ws/${cepField.value}/json/`;
+
+  fetch(url).then(function (response) {
+    response.json().then(function (data) {
+      if (data.erro == true) {
+        document.querySelector(".mensagem-erro-cep").textContent =
+          "CEP Inválido";
+
+        addressField.value = "";
+        neighborhoodField.value = "";
+        cityField.value = "";
+        stateField.value = "";
+        return;
+      }
+
+      addressField.value = data.logradouro;
+      neighborhoodField.value = data.bairro;
+      cityField.value = data.localidade;
+      stateField.value = data.uf;
+    });
+  });
+});
+
+// CAPTURING INPUT DATA
+
+orderContinueButton.addEventListener("click", (button) => {
+  button.preventDefault();
+  console.log("test");
+});
