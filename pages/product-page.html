@@ -35,11 +35,11 @@
     <header>
       <section class="header__container">
       <!-- LOGO -->
-      <a href="../index.html">
-      <div class="logo__container">
-        <img src="../img/dark-logo.png" alt="OtamaStore logo" />
-      </div>
-    </a>
+      <a href="../index.html" id="logo-link">
+        <div class="logo__container">
+          <img src="../img/dark-logo.png" alt="OtamaStore logo" />
+        </div>
+      </a>
       <!-- CENTER MENU -->
       <div class="header__center-menu">
         <h3>PRODUTOS</h3>
@@ -119,39 +119,41 @@
       </section>
     </header>
 
-     <!-- CART -->
-     <div class="cart__container hidden">
-      <div class="background-dark"></div>
-      <div class="cart">
-        <!-- HEADER -->
-        <div class="cart__header">
-          <div class="cart__header__title">
-            <h3>Carrinho</h3>
-            <p id="amount-items-in-cart"></p>
-          </div>
-          <button class="cart__container__close">
-            <img src="../img/cart-close.png" alt="close icon" />
-          </button>
+  <!-- CART -->
+  <div class="cart__container hidden">
+    <div class="background-dark"></div>
+    <div class="cart">
+      <!-- HEADER -->
+      <div class="cart__header">
+        <div class="cart__header__title">
+          <h3>Carrinho</h3>
+          <p id="amount-items-in-cart"></p>
         </div>
-
-        <!-- PRODUCT -->
-
-        <div class="cart__product-list__container">
-        </div>
-
-        <!-- TOTAL -->
-        <hr />
-        <div class="cart__total">
-          <p>Total</p>
-          <h4 id="cart_total_amount">R$ 0,00</h4>
-        </div>
-
-        <!-- CHECKOUT BUTTON -->
-        <button class="cart__checkout-button">Fechar Pedido</button>
-
-        <button class="secondary-button cart-secondary-button">Limpar Carrinho</button>
+        <button class="cart__container__close">
+          <img src="../img/cart-close.png" alt="close icon" />
+        </button>
       </div>
+
+      <!-- PRODUCT -->
+
+      <div class="cart__product-list__container">
+      </div>
+
+      <!-- TOTAL -->
+      <hr />
+      <div class="cart__total">
+        <p>Total</p>
+        <h4 id="cart_total_amount">R$ 0,00</h4>
+      </div>
+
+      <!-- CHECKOUT BUTTON -->
+      <a href="./shipping-info.html">
+      <button class="cart__checkout-button">Fechar Pedido</button></a>
+
+      <button class="secondary-button cart-secondary-button">Limpar Carrinho</button>
     </div>
+  </div>
+  <!-- CART END -->
 
     <!-- PRODUCT SECTION -->
     <section class="product__section">

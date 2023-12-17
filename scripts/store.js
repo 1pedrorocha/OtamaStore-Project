@@ -71,6 +71,7 @@ function setStoreInterface() {
   } else {
   }
 }
+setStoreInterface();
 
 // Product selector
 const storeProducts = document.querySelectorAll(
