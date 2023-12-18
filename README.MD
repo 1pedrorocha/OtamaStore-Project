@@ -4,6 +4,10 @@
 
 🎶 A OtamaStore é um e-commerce onde você pode adquirir o seu Otamatone - um instrumento musical japones que combina música e inovação com um visual divertido. 🎶
 
+### 🔒 Acesso ao painel admin:
+
+email: admin@admin.com | senha: admin
+
 ## 🖥️ Funcionalidades do projeto
 
 - [x] Landing-page
