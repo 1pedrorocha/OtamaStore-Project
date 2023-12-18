@@ -127,7 +127,7 @@ if (paymentButton) {
       cardCvv.value != ""
     ) {
       sendOrderToDatabase();
-      // window.location.href = `/pages/success.html`;
+      window.location.href = `/pages/success.html`;
     }
   });
 }
