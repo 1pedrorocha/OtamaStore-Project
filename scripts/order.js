@@ -20,6 +20,8 @@ const orderFetchFromId = () => {
           createProductsFromList(productList);
           updateTotalAmount(productList);
           insertCustomerInfo(orderFromDatabase);
+          insertOrderInfo(orderFromDatabase);
+          verifyStatusForButtons(orderFromDatabase);
         }
       });
     });
@@ -119,4 +121,107 @@ function insertCustomerInfo(order) {
   emailField.value = order.customer_email;
 
   addressText.textContent = order.address;
+}
+
+// INSERT ORDER INFO
+
+const orderNumberId = document.querySelector(".order__title__order-id");
+
+const orderStatus = document.querySelector(".admin__order__status");
+
+const orderStatusContent = document.querySelector(
+  ".admin__order__status__content"
+);
+
+function insertOrderInfo(order) {
+  orderNumberId.textContent = order.id;
+
+  orderStatusContent.textContent = order.status;
+
+  console.log(order.status);
+
+  if (order.status == "Enviado") {
+    orderStatus.classList.add("status__color__sent");
+  } else if (order.status == "Em aberto") {
+    orderStatus.classList.add("status__color__open");
+  } else if (order.status == "Cancelado") {
+    orderStatus.classList.add("status__color__cancelled");
+  }
+}
+
+////////////// UPDATE ORDER //////////////
+
+////cancel order
+function updateCancelledOrder() {
+  fetch(`http://localhost:3001/order/${orderId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      status: "Cancelado",
+    }),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Erro na atualização do pedido");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log("Pedido atualizado com sucesso:", data);
+    })
+    .catch((error) => {
+      console.error("Erro:", error);
+    });
+}
+
+const orderCancelledButton = document.getElementById(
+  "order-button-status-cancelled"
+);
+
+orderCancelledButton.addEventListener("click", () => {
+  updateCancelledOrder();
+  window.location.href = ``;
+});
+
+////confirm order
+function updateSentOrder() {
+  fetch(`http://localhost:3001/order/${orderId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      status: "Enviado",
+    }),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Erro na atualização do pedido");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log("Pedido atualizado com sucesso:", data);
+    })
+    .catch((error) => {
+      console.error("Erro:", error);
+    });
+}
+
+const orderSentButton = document.getElementById("order-button-status-sent");
+
+orderSentButton.addEventListener("click", () => {
+  updateSentOrder();
+  window.location.href = ``;
+});
+
+// Remove buttons if the order is not open
+function verifyStatusForButtons(order) {
+  if (order.status != "Em aberto") {
+    const buttonsOnScreen = document.querySelector(".buttons-on-screen");
+
+    buttonsOnScreen.innerHTML = "";
+  }
 }

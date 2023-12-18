@@ -126,7 +126,8 @@ if (paymentButton) {
       cardExpirationDate.value != "" &&
       cardCvv.value != ""
     ) {
-      window.location.href = `/pages/success.html`;
+      sendOrderToDatabase();
+      // window.location.href = `/pages/success.html`;
     }
   });
 }
@@ -160,4 +161,39 @@ if (goBackToStoreButton) {
 
     window.location.href = `/pages/loja.html`;
   });
+}
+
+/// SEND ORDER TO THE DATABASE
+
+function sendOrderToDatabase() {
+  const orderTotalAmount = parseFloat(
+    localStorage.getItem("order-total")
+  ).toFixed(2);
+  const orderItemList = JSON.parse(localStorage.getItem("order-items"));
+
+  fetch(`http://localhost:3001/order`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      customer_name: `${customerDataOnStorage.name}`,
+      customer_email: `${customerDataOnStorage.email}`,
+      address: `${orderAddressOnStorage.address} ${orderAddressOnStorage.compl} - ${orderAddressOnStorage.neighborhood} | ${orderAddressOnStorage.city}, ${orderAddressOnStorage.state} | ${orderAddressOnStorage.cep} `,
+      products: JSON.stringify(orderItemList),
+      total: parseFloat(orderTotalAmount),
+    }),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Erro na atualização do pedido");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log("Pedido registrado com sucesso:", data);
+    })
+    .catch((error) => {
+      console.error("Erro:", error);
+    });
 }
