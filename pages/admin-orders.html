@@ -39,7 +39,7 @@
      
 
       <!-- RIGHT NAVIGATION -->
-      <div class="header__navigation hidden">
+      <div class="header__navigation">
         <div class="header__navigation__button" data-chevronbtn>
           Pedidos
         </div>
@@ -49,46 +49,39 @@
       </section>
     </header>
 
-    <section class="admin__container">
-        <div class="admin-access__wrapper">
-            <img src="../img/admin-lock-item.png" alt="">
-            <h2>Acesso Administrativo</h2>
-            <p>Insira as informações abaixo para acessar</p>
+    <section class="admin__internal__container">
 
-            <fieldset class="admin__form__field">
-                <label class="form__field__label" for="name">Seu email</label>
-                <input
-                  name="email"
-                  id="admin-email"
-                  class="form_field__text-input"
-                  type="email"                          
-                  autocomplete="off"
-                />
-                <span class="mensagem-erro mensagem-erro-email"></span>
-              </fieldset>
+        <div class="admin__content__wrapper">
+            <div class="admin__content__header">
+                <h2>Pedidos</h2>
 
-              <fieldset class="admin__form__field">
-                <label class="form__field__label" for="name">Senha</label>
-                <input
-                  name="password"
-                  id="admin-password"
-                  class="form_field__text-input"
-                  type="password"                          
-                  autocomplete="off"
-                />
-                <span class="mensagem-erro mensagem-erro-senha"></span>
-              </fieldset>
+                <div class="status-filter">
 
-              <input
-              class="admin__main-button"
-                value="ENTRAR"
-                id="access-button"
-                data-botao-enviar
-                type="submit"
-              />
-              <span class="mensagem-erro mensagem-erro-acesso"></span>
+                    <a href="#" class="status-filter__option" id="filter-open">
+                        Em aberto
+                    </a>
+                    <div class="admin-filter__divider"></div>
+                    <a href="#" class="status-filter__option" id="filter-sent">
+                        Enviados
+                    </a>
+                    <div class="admin-filter__divider"></div>
+                    <a href="#" class="status-filter__option" id="filter-cancelled">
+                        Cancelados
+                    </a>
+                    
+                </div>
             </div>
+
+
+            <div class="admin__order-list__wrapper">
+              
+            
+            </div>
+
         </div>
+
+
+        
 
        
     </section>
@@ -113,7 +106,7 @@
 
     </footer>
 
-    <script src="../scripts/admin.js"></script>
+    <script src="../scripts/admin-internal.js"></script>
   </body>
 
 

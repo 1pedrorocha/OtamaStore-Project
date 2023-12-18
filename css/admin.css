@@ -3,6 +3,10 @@
   color: var(--alert-red);
 }
 
+.logout:hover {
+  background-color: #e6b4b4;
+}
+
 .admin__container {
   width: 100vw;
   background-color: var(--main-dark);
@@ -22,7 +26,7 @@
   align-items: center;
   padding: 72px;
   border-radius: 16px;
-  box-shadow: inset 0px 0px 12px 0px rgba(87, 81, 134, 0.2);
+  box-shadow: 0px 0px 12px 0px rgba(87, 81, 134, 0.2);
 }
 
 .admin-access__wrapper h2 {
@@ -60,4 +64,124 @@
   background-color: var(--secondary-purple-hover);
 
   transition: 0.2s;
+}
+
+/* //////////     INTERNAL     ////////// */
+
+.admin__internal__container {
+  width: 100vw;
+  background-color: var(--off-white);
+  min-height: 90vh;
+
+  display: flex;
+  justify-content: center;
+  padding-top: 140px;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+}
+
+.admin__content__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.admin__content__header h2 {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.admin-filter__divider {
+  height: 16px;
+  border-right: 1px solid var(--medium-gray);
+}
+
+.status-filter {
+  display: flex;
+  gap: 16px;
+  align-items: end;
+  padding-bottom: 5px;
+}
+
+.status-filter__option {
+  text-decoration: none;
+  color: var(--medium-gray);
+}
+
+.option-selected {
+  text-decoration: none;
+  color: var(--secondary-purple);
+  font-weight: 500;
+}
+
+/* Orders */
+
+.admin__order-list__wrapper {
+  display: flex;
+  width: 1200px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.admin__order__card {
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 42px;
+  border-radius: 16px;
+  gap: 16px;
+  box-shadow: 0px 0px 12px 0px rgba(87, 81, 134, 0.2);
+  width: 300px;
+  transition: 0.2s;
+}
+
+.admin__order__card:hover {
+  transform: translatey(-1px);
+  box-shadow: 0px 0px 18px 0px rgba(65, 60, 100, 0.24);
+  transition: 0.2s;
+}
+
+.admin__order__card h6 {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--medium-gray);
+}
+
+.admin__order__card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin__order__status {
+  margin-top: 6px;
+  padding: 4px 16px;
+  border-radius: 32px;
+}
+
+.status__color__open {
+  background-color: #fce1c8;
+  color: #996547;
+}
+
+.status__color__cancelled {
+  background-color: #fcc8c8;
+  color: #f04a4a;
+}
+
+.status__color__sent {
+  background-color: #cce1f4;
+  color: #3461e2;
+}
+
+.admin__order__card h5 {
+  font-size: 16px;
+}
+
+.admin__order__number {
+  font-size: 14px;
+  color: var(--medium-gray);
 }

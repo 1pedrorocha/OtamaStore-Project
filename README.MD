@@ -18,7 +18,7 @@
 - [x] Página de pagamento
 - [x] Confirmação da compra
 - [ ] Página para checar pedido
-- [ ] Acesso admin
+- [x] Acesso admin
 - [ ] Tabela de pedidos
 - [ ] Tabela de produtos
 - [ ] Adicionar produto
