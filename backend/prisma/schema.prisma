@@ -23,3 +23,13 @@ model Order {
 
   @@map("orders")
 }
+
+model Admin {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  admin_email String
+  admin_password String
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  @@map("admin")
+}

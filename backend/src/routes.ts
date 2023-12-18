@@ -8,6 +8,7 @@ import { CreateOrderController } from "./controllers/CreateOrderController";
 import { ListOrdersController } from "./controllers/ListOrdersController";
 import { DeleteOrderController } from "./controllers/DeleteOrderController";
 import { PutOrderController } from "./controllers/PutOrderController";
+import { ListAdminController } from "./controllers/ListAdminController";
 
 export async function routes(
   fastify: FastifyInstance,
@@ -49,6 +50,14 @@ export async function routes(
     "/order/:id",
     async (request: FastifyRequest, reply: FastifyReply) => {
       return new PutOrderController().handle(request, reply);
+    }
+  );
+
+  //   admin
+  fastify.get(
+    "/admin",
+    async (request: FastifyRequest, reply: FastifyReply) => {
+      return new ListAdminController().handle(request, reply);
     }
   );
 }
