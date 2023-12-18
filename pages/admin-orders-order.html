@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Style -->
+    <link rel="stylesheet" href="../reset.css" />
+    <link rel="stylesheet" href="../main.css" />
+
+        <!-- header styles  -->
+        <link rel="stylesheet" href="../css/header.css" />
+        <link rel="stylesheet" href="../css/product-category.css" />
+        <link rel="stylesheet" href="../css/cart.css" />
+        <link rel="stylesheet" href="../css/admin-menu.css" />
+
+        <!-- main page styles   -->
+        <link rel="stylesheet" href="../css/store.css">
+        <link rel="stylesheet" href="../css/shipping-info.css">
+        <link rel="stylesheet" href="../css/admin.css">
+        <link rel="stylesheet" href="../css/footer.css">
+
+    <link rel="stylesheet" href="../hide.css" />
+    <!-- Style-end -->
+
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon" />
+    <title>OtamaStore - Loja</title>
+    
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <section class="header__container">
+      <!-- LOGO -->
+      <a href="../index.html" id="logo-link">
+      <div class="logo__container">
+        <img src="../img/dark-logo.png" alt="OtamaStore logo" />
+      </div>
+    </a>
+     
+
+      <!-- RIGHT NAVIGATION -->
+      <div class="header__navigation">
+        
+        <div class="header__navigation__button" data-chevronbtn>
+          <img src="../img/chevron-button.png" alt="chevron icon" />
+          <!-- ADMIN MENU -->
+          <div class="admin-menu__container hidden">
+            <div class="admin-menu__box" data-type="pedidos">
+              <div class="admin-menu__item" data-type="pedidos">
+                <img src="../img/admin-menu-item.png" alt="item icon" />
+              </div>
+              <div class="admin-menu__item__label"><p>Pedidos</p></div>
+            </div>
+            <div class="admin-menu__box" data-type="admin">
+              <div class="admin-menu__item" data-type="admin">
+                <img src="../img/admin-menu-access.png" alt="item icon" />
+              </div>
+              <div class="admin-menu__item__label"><p>Administrativo</p></div>
+            </div>   
+            <div class="admin-menu__box" data-type="descubra">
+              <div class="admin-menu__item" data-type="descubra">
+                <img src="../img/admin-menu-try.png" alt="item icon" />
+              </div>
+              <div class="admin-menu__item__label"><p>Descubra</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <section class="shipping-info__container">
+      <!-- FORM -->
+
+        <div class="shipping-info__customer-info">
+            <div class="shipping-info__customer-info__wrapper">
+                    <!-- STORE BREADCRUMBS -->
+                <div class="store__header">
+                    <div class="breadcrumbs">
+                    <a class="breadcrumb__not-selected" href="./admin-orders.html">Painel administrativo</a>
+                    <img src="../img/breadcrumb.png" alt="breadcrumb">
+                    <a class="breadcrumb__selected" href="#">Pedido</a>
+                    </div>        
+                </div>
+
+                <div class="order__header">
+                    <div class="order__title">
+                        <h2>Pedido</h2>
+                        <p class="order__title__order-id">658063884a4cc996fb0140e5</p>
+                    </div>
+
+                    <div class="admin__order__status status__color__open">
+                        <p>Em aberto</p>
+                    </div>
+                </div>
+
+                <form action="" class="shipping-info__customer-info__form"  data-userinfo>
+
+                    <!-- CLIENT INFO -->
+                    <h3>Cliente</h3>
+                    <fieldset class="form__field">
+                        <label class="form__field__label" for="name" >Nome</label>
+                        <input
+                          name="name"
+                          id="name"
+                          class="form_field__text-input"
+                          type="text"                          
+                          value=""
+                          disabled
+                        />
+                        
+                      </fieldset>
+
+                      <fieldset class="form__field">
+                        <label class="form__field__label" for="email">Email</label>
+                        <input
+                          name="email"
+                          id="email"
+                          class="form_field__text-input"
+                          type="text"
+                          disabled
+                          value=""
+                        />
+                        
+                      </fieldset>
+
+                      <!-- SHIPPING INFO -->
+                      <h4 class="shipping-info__title">Endereço para entrega:</h4>
+                      <p class="shipping-info__content" id="address"></p>
+
+                      
+
+                    </div>
+
+                            
+                      
+                </form>
+            </div>
+        </div>
+
+        <div class="shipping-info__cart">
+            <div class="shipping-info__cart__wrapper">
+                <h3>Itens no pedido</h3>
+                <!-- PRODUCT -->
+                <div class="shipping-info__cart__product-list">
+                  
+                </div>
+                <hr />
+                <!-- TOTALS -->
+                <div class="shipping-info__cart__total">
+                    <p>Subtotal</p>
+                    <h5 id="purchase-subtotal-amount">R$ 499,90</h5>
+                </div>
+                <div class="shipping-info__cart__total">
+                    <p>Frete</p>
+                    <h5>Grátis</h5>
+                </div>
+
+                <hr />
+                <div class="shipping-info__cart__total">
+                    <p>Total</p>
+                    <h2 id="purchase-total-amount">R$ 499,90</h2>
+                </div>
+
+                <div class="admin__order__action__buttons">
+
+                </div>
+
+                <button class="admin-main-button">Marcar como entregue</button>
+                
+                <button class="admin-secondary-button">Marcar como cancelado</button>
+                
+                
+
+            </div>
+
+
+
+        </div>
+    </section>
+
+    
+
+  
+
+
+
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-content">
+        <img src="../img/light-logo.png" alt="">
+
+        <div class="footer-content__info">
+          <p>Copyright © 2023 OtamaStore Ltda. Todos os direitos reservados.</p>
+          <div class="terms-policy">
+            <a href="#">Termos de uso</a>
+            <div class="footer__content__text__division"></div>
+            <a href="#">Política de Privacidade</a>
+          </div>
+      </div>
+      </div>
+
+    </footer>
+  </body>
+  <script src="../scripts/order.js"></script>
+
+  
+</html>

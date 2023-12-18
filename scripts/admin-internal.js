@@ -51,6 +51,8 @@ function createCard(item) {
 
   let orderStatus;
 
+  const products = JSON.parse(item.products);
+
   if (item.status == "Em aberto") {
     orderStatus = "status__color__open";
   } else if (item.status == "Cancelado") {
@@ -60,7 +62,9 @@ function createCard(item) {
   }
 
   cardWrapper.innerHTML += `
-  <div class="admin__order__card" data-order="${item.id}">
+  <div class="admin__order__card" data-order="${
+    item.id
+  }" data-products="${JSON.stringify(products)} ">
                     <div class="admin__order__card__content">
                         <h6>PEDIDO</h6>
                         <p class= "admin__order__number">${item.id}</p>
@@ -173,6 +177,10 @@ function makeOrdersClickable() {
   clickableOrderCards.forEach((card) => {
     card.addEventListener("click", () => {
       console.log(card.dataset.order);
+
+      localStorage.setItem("selected-order", card.dataset.order);
+
+      window.location.href = "admin-orders-order.html";
     });
   });
 }

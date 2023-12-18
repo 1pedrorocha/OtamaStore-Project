@@ -160,6 +160,11 @@
   margin-top: 6px;
   padding: 4px 16px;
   border-radius: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 24px;
+  font-size: 14px;
 }
 
 .status__color__open {
@@ -184,4 +189,66 @@
 .admin__order__number {
   font-size: 14px;
   color: var(--medium-gray);
+}
+
+/* //////////     INTERNAL  - ORDER    ////////// */
+
+.order__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order__title h2 {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.order__title__order-id {
+  color: var(--medium-gray);
+  font-size: 14px;
+}
+
+.shipping-info__title {
+  font-weight: 600;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.admin-main-button {
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  color: var(--white);
+  width: 100%;
+  padding: 16px 0;
+  background-color: var(--secondary-purple);
+  border-radius: 12px;
+  transition: 0.3s;
+  border: none;
+  margin-bottom: 16px;
+  margin-top: 32px;
+}
+
+.admin-main-button:hover {
+  background-color: var(--secondary-purple-hover);
+  transition: 0.3s;
+}
+
+.admin-secondary-button {
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  color: var(--secondary-purple);
+  width: 100%;
+  padding: 16px 0;
+  background-color: var(--light-gray);
+  border-radius: 12px;
+  transition: 0.3s;
+  border: none;
+  font-family: var(--main-font);
+}
+
+.admin-secondary-button:hover {
+  background-color: var(--light-gray-hover);
+  transition: 0.3s;
 }
