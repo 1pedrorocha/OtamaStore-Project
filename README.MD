@@ -21,9 +21,9 @@ email: admin@admin.com | senha: admin
 - [x] Página de dados do cliente
 - [x] Página de pagamento
 - [x] Confirmação da compra
-- [ ] Página para checar pedido
+- [x] Página para checar pedido
 - [x] Acesso admin
-- [ ] Tabela de pedidos
+- [x] Página de pedidos
 - [ ] Tabela de produtos
 - [ ] Adicionar produto
 - [ ] Experiência Otamatone
