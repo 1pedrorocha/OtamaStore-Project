@@ -10,33 +10,16 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Customer {
+model Order {
   id String @id @default(auto()) @map("_id") @db.ObjectId
-  name String
-  email String
-  status Boolean
+  customer_name String
+  customer_email String
+  address String
+  products String
+  total Int
+  status String
   created_at DateTime? @default(now())
   updated_at DateTime? @default(now())
 
-  @@map("customers")
-}
-
-model Product {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  image String
-  name String
-  category String
-  price Int
-  description String
-  otherImages String
-  stock Int
-}
-
-model Purchase {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  items String
-  total Int
-  contact String
-  address String
-  status String
+  @@map("orders")
 }
