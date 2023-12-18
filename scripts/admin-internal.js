@@ -21,6 +21,9 @@ const orderFetch = () => {
     .then((data) => {
       data.forEach((order) => {
         orders.push(order);
+      });
+
+      orders.reverse().forEach((order) => {
         createCard(order);
 
         if (order.status == "Em aberto") {

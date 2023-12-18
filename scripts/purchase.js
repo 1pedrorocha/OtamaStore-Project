@@ -18,7 +18,7 @@ if (whatToLookAt == "cart") {
     category: localStorage.getItem("selected-category"),
     name: localStorage.getItem("selected-product-name"),
     price: localStorage.getItem("selected-product-price"),
-    amount: localStorage.getItem("selected-product-amount"),
+    amount: 1,
     image: localStorage.getItem("selected-product-image"),
   };
 
@@ -82,11 +82,15 @@ const purchaseTotalAmount = document.getElementById("purchase-total-amount");
 let totalAmount = 0;
 
 function updateTotalAmount() {
-  for (var i = 0; i < itemListOnStorage.length; i++) {
-    let productPrice = itemListOnStorage[i].price;
-    let productAmount = itemListOnStorage[i].amount;
+  if (whatToLookAt == "cart") {
+    for (var i = 0; i < itemListOnStorage.length; i++) {
+      let productPrice = itemListOnStorage[i].price;
+      let productAmount = itemListOnStorage[i].amount;
 
-    totalAmount += parseFloat(productPrice * productAmount);
+      totalAmount += parseFloat(productPrice * productAmount);
+    }
+  } else {
+    totalAmount = parseFloat(itemListOnStorage[0].price);
   }
 
   purchaseSubtotalAmount.textContent = `R$ ${parseFloat(totalAmount)

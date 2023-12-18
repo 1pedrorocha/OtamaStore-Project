@@ -180,6 +180,7 @@ function sendOrderToDatabase() {
       customer_name: `${customerDataOnStorage.name}`,
       customer_email: `${customerDataOnStorage.email}`,
       address: `${orderAddressOnStorage.address} ${orderAddressOnStorage.compl} - ${orderAddressOnStorage.neighborhood} | ${orderAddressOnStorage.city}, ${orderAddressOnStorage.state} | ${orderAddressOnStorage.cep} `,
+
       products: JSON.stringify(orderItemList),
       total: parseFloat(orderTotalAmount),
     }),

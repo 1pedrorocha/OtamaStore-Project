@@ -230,7 +230,6 @@ const StockFun = [
       "/img/products/fun/hello-kitty-1.png",
       "/img/products/fun/hello-kitty-2.png",
       "/img/products/fun/hello-kitty-3.png",
-      "/img/products/fun/hello-kitty-4.png",
     ],
     Stock: 25,
   },

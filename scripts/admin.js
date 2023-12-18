@@ -38,6 +38,7 @@ accessButton.addEventListener("click", (button) => {
         "Os dados de acesso não estão corretos.";
       return;
     } else {
+      localStorage.setItem("choosen-status", "open");
       window.location.href = `/pages/admin-orders.html`;
     }
   }
